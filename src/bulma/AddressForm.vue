@@ -1,6 +1,5 @@
 <template>
-    <modal show
-        portal="address-form"
+    <modal portal="address-form"
         v-on="$listeners">
         <enso-form class="box has-background-light"
             :params="params"
