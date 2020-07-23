@@ -156,10 +156,21 @@ export default {
                     country_id: this.form.field('country_id').value
                 }
             }).then(({ data: { postcode } }) => {
-                this.$refs.form.field('lat').value = postcode.lat;
-                this.$refs.form.field('long').value = postcode.long;
-                this.$refs.form.field('city').value = postcode.city;
-                this.$refs.form.field('region_id').value = postcode.region_id;
+                this.$refs.form.field('lat').value = postcode.lat
+                    || this.$refs.form.field('lat').value;
+
+                this.$refs.form.field('long').value = postcode.long
+                    || this.$refs.form.field('long').value;
+
+                this.$refs.form.field('city').value = postcode.city
+                    || this.$refs.form.field('city').value;
+
+                this.$refs.form.field('region_id').value = postcode.region_id
+                    || this.$refs.form.field('region_id').value;
+
+                this.$refs.form.field('locality_id').value = postcode.locality_id
+                    || this.$refs.form.field('locality_id').value;
+
                 this.loading = false;
             }).catch((error) => {
                 const { status, data } = error.response;
