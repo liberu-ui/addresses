@@ -171,6 +171,9 @@ export default {
                 this.$refs.form.field('locality_id').value = postcode.locality_id
                     || this.$refs.form.field('locality_id').value;
 
+                this.$refs.form.field('street').value = postcode.street
+                    || this.$refs.form.field('street').value;
+
                 this.loading = false;
             }).catch((error) => {
                 const { status, data } = error.response;
