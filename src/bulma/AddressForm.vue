@@ -41,17 +41,47 @@
                         errors.clear(field.name)
                     "/>
             </template>
+            <template v-slot:postcode="{ field, errors }">
+                <div class="is-fullwidth">
+                    <label class="label">
+                        {{ i18n(field.label) }}
+                    </label>
+                    <div class="field has-addons">
+                        <div class="control is-expanded">
+                            <input class="input"
+                                :class="['input', { 'is-danger': errors.has(field.name) }]"
+                                type="text"
+                                :placeholder="i18n(field.meta.placeholder)"
+                                v-model="field.value"
+                                @input="errors.clear(field.name)">
+                        </div>
+                        <div class="control"
+                            v-if="canAccess('core.addresses.postcode')">
+                            <a class="button is-info"
+                                @click="loadAddress">
+                           <span class="icon">
+                                <fa icon="search-location"/>
+                           </span>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="help is-danger"
+                        v-if="errors.has(field.name)">
+                        {{ errors.get(field.name) }}
+                    </p>
+                </div>
+            </template>
         </enso-form>
     </modal>
 </template>
 
 <script>
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faLocationArrow, faMapPin } from '@fortawesome/free-solid-svg-icons';
+import { faLocationArrow, faMapPin, faSearchLocation } from '@fortawesome/free-solid-svg-icons';
 import { Modal } from '@enso-ui/modal/bulma';
 import { EnsoForm, FormField } from '@enso-ui/forms/bulma';
 
-library.add(faLocationArrow, faMapPin);
+library.add(faLocationArrow, faMapPin, faSearchLocation);
 
 export default {
     name: 'AddressForm',
@@ -117,6 +147,44 @@ export default {
             this.localityParams.region_id = this.form.field('region_id').value;
             this.$emit('form-loaded');
         },
+        loadAddress() {
+            this.loading = true;
+
+            axios.get(this.route('core.addresses.postcode'), {
+                params: {
+                    postcode: this.form.field('postcode').value,
+                    country_id: this.form.field('country_id').value
+                }
+            }).then(({ data: { postcode } }) => {
+                this.$refs.form.field('lat').value = postcode.lat
+                    || this.$refs.form.field('lat').value;
+
+                this.$refs.form.field('long').value = postcode.long
+                    || this.$refs.form.field('long').value;
+
+                this.$refs.form.field('city').value = postcode.city
+                    || this.$refs.form.field('city').value;
+
+                this.$refs.form.field('region_id').value = postcode.region_id
+                    || this.$refs.form.field('region_id').value;
+
+                this.$refs.form.field('locality_id').value = postcode.locality_id
+                    || this.$refs.form.field('locality_id').value;
+
+                this.loading = false;
+            }).catch((error) => {
+                const { status, data } = error.response;
+                this.loading = false;
+
+                if (status === 422) {
+                    this.$refs.form.errors.set(data.errors);
+                    this.$nextTick(this.$refs.form.focusError);
+                    return;
+                }
+
+                this.errorHandler(error);
+            });
+        }
     },
 };
 </script>
