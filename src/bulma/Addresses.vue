@@ -47,7 +47,9 @@
                 v-for="(address, index) in filteredAddresses"
                 :key="index">
                 <address-card :address="address"
-                    @make-default="makeDefault(address)"
+                    @make-default="make('default', address)"
+                    @make-shipping="make('shipping', address)"
+                    @make-billing="make('billing', address)"
                     @edit="edit(address)"
                     @delete="destroy(address, index)"/>
             </div>
@@ -147,10 +149,11 @@ export default {
         create() {
             this.path = this.route('core.addresses.create', this.params);
         },
-        makeDefault(address) {
+        make(type ,address) {
             this.loading = true;
+            const method = type.charAt(0).toUpperCase() + type.slice(1);
 
-            axios.patch(this.route('core.addresses.makeDefault', address.id))
+            axios.patch(this.route(`core.addresses.make${method}`, address.id))
                 .then(() => this.fetch())
                 .catch(this.errorHandler);
         },
