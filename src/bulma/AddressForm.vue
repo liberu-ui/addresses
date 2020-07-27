@@ -153,8 +153,8 @@ export default {
             axios.get(this.route('core.addresses.postcode'), {
                 params: {
                     postcode: this.form.field('postcode').value,
-                    country_id: this.form.field('country_id').value
-                }
+                    country_id: this.form.field('country_id').value,
+                },
             }).then(({ data: { postcode } }) => {
                 this.$refs.form.field('lat').value = postcode.lat
                     || this.$refs.form.field('lat').value;
@@ -187,7 +187,7 @@ export default {
 
                 this.errorHandler(error);
             });
-        }
+        },
     },
 };
 </script>

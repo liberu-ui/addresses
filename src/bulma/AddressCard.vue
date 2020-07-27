@@ -102,13 +102,13 @@ import { VTooltip } from 'v-tooltip';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
     faPencilAlt, faAnchor, faGlobe, faStickyNote, faTrashAlt,
-    faTruck, faMoneyBillWave
+    faTruck, faMoneyBillWave,
 } from '@fortawesome/free-solid-svg-icons';
 import Confirmation from '@enso-ui/confirmation/bulma';
 
 library.add(
     faPencilAlt, faAnchor, faGlobe, faStickyNote,
-    faTrashAlt, faTruck, faMoneyBillWave
+    faTrashAlt, faTruck, faMoneyBillWave,
 );
 
 export default {

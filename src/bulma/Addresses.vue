@@ -149,7 +149,7 @@ export default {
         create() {
             this.path = this.route('core.addresses.create', this.params);
         },
-        make(type ,address) {
+        make(type, address) {
             this.loading = true;
             const method = type.charAt(0).toUpperCase() + type.slice(1);
 
