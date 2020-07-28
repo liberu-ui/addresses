@@ -27,20 +27,6 @@
                 <form-field :field="field"
                     @input="rerender"/>
             </template>
-            <template v-slot:region_id="{ field, errors }">
-                <form-field :field="field"
-                    @input="
-                        localityParams.region_id = $event;
-                        errors.clear(field.name);
-                    "/>
-            </template>
-            <template v-slot:locality_id="{ field, errors }">
-                <form-field :field="field"
-                    :params="localityParams"
-                    @input="
-                        errors.clear(field.name)
-                    "/>
-            </template>
             <template v-slot:postcode="{ field, errors }">
                 <div class="is-fullwidth">
                     <label class="label">
@@ -70,6 +56,20 @@
                         {{ errors.get(field.name) }}
                     </p>
                 </div>
+            </template>
+            <template v-slot:region_id="{ field, errors }">
+                <form-field :field="field"
+                    @input="
+                        localityParams.region_id = $event;
+                        errors.clear(field.name);
+                    "/>
+            </template>
+            <template v-slot:locality_id="{ field, errors }">
+                <form-field :field="field"
+                    :params="localityParams"
+                    @input="
+                        errors.clear(field.name)
+                    "/>
             </template>
         </enso-form>
     </modal>
