@@ -145,7 +145,7 @@ export default {
             this.form.field('addressable_id').value = this.id;
             this.form.field('addressable_type').value = this.type;
             this.localityParams.region_id = this.form.field('region_id').value;
-            this.$emit('form-loaded');
+            this.$emit('form-loaded', form);
         },
         loadAddress() {
             this.loading = true;
