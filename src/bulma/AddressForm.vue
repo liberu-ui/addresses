@@ -7,8 +7,7 @@
             v-bind="$attrs"
             v-on="$listeners"
             @ready="setFields"
-            disable-state
-            ref="form">
+            disable-state>
             <template v-slot:actions-left
                 v-if="canLocalize">
                 <a class="button is-warning"
@@ -43,7 +42,7 @@
                         </div>
                         <div class="control"
                             v-if="canAccess('core.addresses.postcode')">
-                            <a class="button is-info"
+                            <a :class="['button', postcodeCss]"
                                 @click="loadAddress">
                            <span class="icon">
                                 <fa icon="search-location"/>
@@ -105,6 +104,7 @@ export default {
         key: 1,
         form: null,
         loading: false,
+        postcode: null,
         params: {
             countryId: null,
         },
@@ -118,6 +118,18 @@ export default {
             return this.form && this.form.routeParam('address')
                 && this.canAccess('core.addresses.localize');
         },
+        field() {
+            return this.form && this.form.field;
+        },
+        postcodeCss() {
+            if (this.postcode === null) {
+                return 'is-info';
+            }
+
+            return this.postcode
+                ? 'is-success'
+                : 'is-danger';
+        },
     },
 
     methods: {
@@ -128,13 +140,10 @@ export default {
             axios.get(this.route('core.addresses.localize', address))
                 .then(({ data }) => {
                     const { lat, long } = data;
-                    this.$refs.form.field('lat').value = lat;
-                    this.$refs.form.field('long').value = long;
-                    this.loading = false;
-                }).catch((error) => {
-                    this.loading = false;
-                    this.errorHandler(error);
-                });
+                    this.field('lat').value = lat;
+                    this.field('long').value = long;
+                }).catch(this.errorHandler)
+                .finally(() => (this.loading = false));
         },
         rerender(countryId) {
             this.params.countryId = countryId;
@@ -142,51 +151,37 @@ export default {
         },
         setFields({ form }) {
             this.form = form;
-            this.form.field('addressable_id').value = this.id;
-            this.form.field('addressable_type').value = this.type;
-            this.localityParams.region_id = this.form.field('region_id').value;
+            this.field('addressable_id').value = this.id;
+            this.field('addressable_type').value = this.type;
+            this.localityParams.region_id = this.field('region_id').value;
             this.$emit('form-loaded', form);
         },
         loadAddress() {
             this.loading = true;
+            this.postcode = null;
 
-            axios.get(this.route('core.addresses.postcode'), {
-                params: {
-                    postcode: this.form.field('postcode').value,
-                    country_id: this.form.field('country_id').value,
-                },
-            }).then(({ data: { postcode } }) => {
-                this.$refs.form.field('lat').value = postcode.lat
-                    || this.$refs.form.field('lat').value;
+            const params = { params: {
+                postcode: this.field('postcode').value,
+                country_id: this.field('country_id').value,
+            } };
 
-                this.$refs.form.field('long').value = postcode.long
-                    || this.$refs.form.field('long').value;
+            axios.get(this.route('core.addresses.postcode'), params)
+                .then(({ data: { postcode } }) => {
+                    ['lat', 'long', 'city', 'region_id', 'locality_id', 'street']
+                        .forEach(key => (this.field(key).value = postcode[key]
+                        || this.field(key).value));
+                    this.postcode = true;
+                }).catch((error) => {
+                    const { status, data } = error.response;
+                    this.postcode = false;
 
-                this.$refs.form.field('city').value = postcode.city
-                    || this.$refs.form.field('city').value;
-
-                this.$refs.form.field('region_id').value = postcode.region_id
-                    || this.$refs.form.field('region_id').value;
-
-                this.$refs.form.field('locality_id').value = postcode.locality_id
-                    || this.$refs.form.field('locality_id').value;
-
-                this.$refs.form.field('street').value = postcode.street
-                    || this.$refs.form.field('street').value;
-
-                this.loading = false;
-            }).catch((error) => {
-                const { status, data } = error.response;
-                this.loading = false;
-
-                if (status === 422) {
-                    this.$refs.form.errors.set(data.errors);
-                    this.$nextTick(this.$refs.form.focusError);
-                    return;
-                }
-
-                this.errorHandler(error);
-            });
+                    if (status === 422) {
+                        this.form.errors.set(data.errors);
+                        this.$nextTick(this.form.focusError);
+                    } else {
+                        this.errorHandler(error);
+                    }
+                }).finally(() => (this.loading = false));
         },
     },
 };
