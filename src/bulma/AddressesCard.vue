@@ -3,7 +3,7 @@
         :collapsed="collapsed">
         <card-header class="has-background-light">
             <template v-slot:title>
-                <span class="icon is-small has-margin-right-small">
+                <span class="icon is-small mr-1">
                     <fa :icon="icon"/>
                 </span>
                 {{ displayTitle }}

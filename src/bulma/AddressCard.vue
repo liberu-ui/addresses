@@ -1,5 +1,5 @@
 <template>
-    <div class="box has-background-light raises-on-hover address has-padding-large"
+    <div class="box has-background-light raises-on-hover address p-3"
         @mouseover="controls = true"
         @mouseleave="controls = !confirmation ? false : controls">
         <div class="media">

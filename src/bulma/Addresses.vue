@@ -42,7 +42,7 @@
                 </p>
             </slot>
         </div>
-        <div class="columns is-multiline has-margin-top-large">
+        <div class="columns is-multiline mt-3">
             <div class="column is-half-tablet"
                 v-for="(address, index) in filteredAddresses"
                 :key="index">
