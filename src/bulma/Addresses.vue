@@ -106,8 +106,9 @@ export default {
 
             return query
                 ? this.addresses.filter(
-                    ({ city, street }) => city.toLowerCase().indexOf(query) > -1
-                        || street.toLowerCase().indexOf(query) > -1,
+                    ({ city, locality, street }) => street.toLowerCase().indexOf(query) > -1
+                        || locality?.toLowerCase().indexOf(query) > -1
+                        || city?.toLowerCase().indexOf(query) > -1,
                 )
                 : this.addresses;
         },
