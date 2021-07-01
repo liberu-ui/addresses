@@ -2,9 +2,9 @@
     <modal portal="address-form"
         v-on="$listeners">
         <enso-form class="box has-background-light"
+            v-bind="$attrs"
             :params="params"
             :key="key"
-            v-bind="$attrs"
             v-on="$listeners"
             @ready="setFields"
             disable-state>
