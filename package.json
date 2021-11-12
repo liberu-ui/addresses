@@ -1,6 +1,6 @@
 {
   "name": "@enso-ui/addresses",
-  "version": "1.3.8",
+  "version": "2.0.0",
   "description": "Addresses",
   "main": "index.js",
   "scripts": {
