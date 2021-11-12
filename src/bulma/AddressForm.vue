@@ -8,7 +8,7 @@
             v-on="$listeners"
             @ready="setFields"
             disable-state>
-            <template v-slot:actions-left
+            <template #:actions-left
                 v-if="canLocalize">
                 <a class="button is-warning"
                    :class="{'loading': loading}"
@@ -22,11 +22,11 @@
                     <span class="is-hidden-mobile"/>
                 </a>
             </template>
-            <template v-slot:country_id="{ field }">
+            <template #:country_id="{ field }">
                 <form-field :field="field"
                     @input="rerender"/>
             </template>
-            <template v-slot:postcode="{ field, errors }">
+            <template #:postcode="{ field, errors }">
                 <div class="is-fullwidth">
                     <label class="label">
                         {{ i18n(field.label) }}
@@ -56,14 +56,14 @@
                     </p>
                 </div>
             </template>
-            <template v-slot:region_id="{ field, errors }">
+            <template #:region_id="{ field, errors }">
                 <form-field :field="field"
                     @input="
                         localityParams.region_id = $event;
                         errors.clear(field.name);
                     "/>
             </template>
-            <template v-slot:locality_id="{ field, errors }">
+            <template #:locality_id="{ field, errors }">
                 <form-field :field="field"
                     :params="localityParams"
                     @input="
@@ -87,6 +87,8 @@ export default {
 
     components: { Modal, EnsoForm, FormField },
 
+    inject: ['canAccess', 'errorHandler', 'i18n', 'route'],
+
     props: {
         id: {
             type: [String, Number],
@@ -97,8 +99,6 @@ export default {
             default: null,
         },
     },
-
-    inject: ['canAccess', 'errorHandler', 'i18n', 'route'],
 
     data: () => ({
         key: 1,
@@ -160,15 +160,17 @@ export default {
             this.loading = true;
             this.postcode = null;
 
-            const params = { params: {
-                postcode: this.field('postcode').value,
-                country_id: this.field('country_id').value,
-            } };
+            const params = {
+                params: {
+                    postcode: this.field('postcode').value,
+                    country_id: this.field('country_id').value,
+                },
+            };
 
             axios.get(this.route('core.addresses.postcode'), params)
                 .then(({ data: { postcode } }) => {
                     ['lat', 'long', 'city', 'region_id', 'locality_id', 'street']
-                        .forEach(key => (this.field(key).value = postcode[key]
+                        .forEach((key) => (this.field(key).value = postcode[key]
                         || this.field(key).value));
                     this.postcode = true;
                 }).catch((error) => {
