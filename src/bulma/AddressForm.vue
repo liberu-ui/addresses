@@ -1,14 +1,12 @@
 <template>
-    <modal portal="address-form"
-        v-on="$listeners">
+    <modal portal="address-form">
         <enso-form class="box has-background-light"
             v-bind="$attrs"
             :params="params"
             :key="key"
-            v-on="$listeners"
             @ready="setFields"
             disable-state>
-            <template #:actions-left
+            <template #actions-left
                 v-if="canLocalize">
                 <a class="button is-warning"
                    :class="{'loading': loading}"
@@ -22,11 +20,11 @@
                     <span class="is-hidden-mobile"/>
                 </a>
             </template>
-            <template #:country_id="{ field }">
+            <template #country_id="{ field }">
                 <form-field :field="field"
                     @input="rerender"/>
             </template>
-            <template #:postcode="{ field, errors }">
+            <template #postcode="{ field, errors }">
                 <div class="is-fullwidth">
                     <label class="label">
                         {{ i18n(field.label) }}
@@ -56,14 +54,14 @@
                     </p>
                 </div>
             </template>
-            <template #:region_id="{ field, errors }">
+            <template #region_id="{ field, errors }">
                 <form-field :field="field"
                     @input="
                         localityParams.region_id = $event;
                         errors.clear(field.name);
                     "/>
             </template>
-            <template #:locality_id="{ field, errors }">
+            <template #locality_id="{ field, errors }">
                 <form-field :field="field"
                     :params="localityParams"
                     @input="
@@ -170,10 +168,10 @@ export default {
             axios.get(this.route('core.addresses.postcode'), params)
                 .then(({ data: { postcode } }) => {
                     ['lat', 'long', 'city', 'region_id', 'locality_id', 'street']
-                        .forEach((key) => (this.field(key).value = postcode[key]
+                        .forEach(key => (this.field(key).value = postcode[key]
                         || this.field(key).value));
                     this.postcode = true;
-                }).catch((error) => {
+                }).catch(error => {
                     const { status, data } = error.response;
                     this.postcode = false;
 
