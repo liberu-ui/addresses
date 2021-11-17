@@ -879,7 +879,7 @@
     "@babel/types" "^7.4.4"
     esutils "^2.0.2"
 
-"@babel/runtime@^7.12.13", "@babel/runtime@^7.13.10", "@babel/runtime@^7.8.4":
+"@babel/runtime@^7.12.13", "@babel/runtime@^7.8.4":
   version "7.16.3"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.16.3.tgz#b86f0db02a04187a3c17caa77de69840165d42d5"
   integrity sha512-WBwekcqacdY2e9AF/Q7WLFUWmdJGJTkbjqTjoMDgXkVZ3ZRUvOPsLb5KdwISoQVsbP+DQzVZW4Zhci0DvpbNTQ==
@@ -918,230 +918,734 @@
     "@babel/helper-validator-identifier" "^7.15.7"
     to-fast-properties "^2.0.0"
 
-"@enso-ui/card@^2.0":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@enso-ui/card/-/card-2.0.1.tgz#d2dd365cbfaa15cbc21a3c2647c097d2a4de9c58"
-  integrity sha512-Ncrv9XawTNiAqbLaBW1u5wRemfvl/KVMHI/CEr8BM8xP+etes4H9P9YQXFYkL63ez6cgtPO3+/zkJbDsVVyAOg==
+"@enso-ui/accessories@^4.0":
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/@enso-ui/accessories/-/accessories-4.0.5.tgz#c95f5b67007cac15ff023316a21ff48c59c1eb77"
+  integrity sha512-87bC2pYclm7UH2paT7Tv38lWogpSthoZpJ+oOCIo0FZ3ta09YVQNgBKM25tSflGTYacLwQHTNTsvZ9yfxU6bog==
   dependencies:
-    "@enso-ui/dropdown-indicator" "^1.0"
-    "@enso-ui/loader" "^2.0"
+    "@enso-ui/tabs" "^2.0"
+    "@fortawesome/vue-fontawesome" "3.0.0-5"
+    bulma "^0.9.0"
+    vue "^3.0"
+
+"@enso-ui/addresses@^2.0":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@enso-ui/addresses/-/addresses-2.0.5.tgz#971bae6a7fc6bc1a161a4d33ca9589a834e33fba"
+  integrity sha512-ARM5YLiUYhp6rR27FD4wPogaWGJYOtMYUNNXdqNTY6y9gF5vUCRIZXOxwTj5nQ4yHlhRbOTw9203SogBTfw/Ew==
+  dependencies:
+    "@enso-ui/card" "^3.0"
+    "@enso-ui/confirmation" "^2.0"
+    "@enso-ui/forms" "^3.0"
+    "@enso-ui/google" "^2.0"
+    "@enso-ui/modal" "^3.0"
     "@fortawesome/fontawesome-svg-core" "^1.2.2"
     "@fortawesome/free-solid-svg-icons" "^5.2.0"
+    "@fortawesome/vue-fontawesome" "3.0.0-5"
     bulma "^0.9.0"
-    vue "^2.5.16"
+    lodash "^4.17.10"
+    v-tooltip "4.0.0-alpha.1"
+    vue "^3.0"
+    vuex "^4.0.0"
 
-"@enso-ui/confirmation@^1.0":
-  version "1.0.19"
-  resolved "https://registry.yarnpkg.com/@enso-ui/confirmation/-/confirmation-1.0.19.tgz#80ac01ef5c581d348ecacf5da951e6ac31b52ffd"
-  integrity sha512-m1qw6X6TPvu28ljuSJpqe0TRYw4mTdZ4akYUrXUXR2lWB7xP+ydLrJqTJo/ikAkMR5BfK0MAqS1WNAh4BA35UQ==
+"@enso-ui/auth@^2.0":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@enso-ui/auth/-/auth-2.0.5.tgz#fe51b136de6e658bf70e2dc0b75f790c041deaeb"
+  integrity sha512-m6oD5sU/85DfSctNciDrabVmpEU6pLTh7j3qdXf6zVm8F/PDst5qCR4T2GrQ08/zsHk71yBjDbZCPirgvJL8QQ==
+  dependencies:
+    "@enso-ui/directives" "^2.0"
+    "@enso-ui/forms" "^3.0"
+    "@enso-ui/laravel-validation" "^2.0"
+    "@enso-ui/ui" "^5.0"
+    "@fortawesome/fontawesome-svg-core" "^1.2.2"
+    "@fortawesome/free-solid-svg-icons" "^5.2.0"
+    "@fortawesome/vue-fontawesome" "3.0.0-5"
+    vue "^3.0"
+    vuex "^4.0.0"
+    zxcvbn "^4.4.2"
+
+"@enso-ui/bookmarks@^2.0":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@enso-ui/bookmarks/-/bookmarks-2.0.5.tgz#7b05a27b4b7d580f791547be53a5de8e9e8b02b4"
+  integrity sha512-bSWTnn2/CKMTCMYfV+9WTfDhMN+4pgKI8vLdGofjE+Vb5z/RWwQhn3yDEvJhYL7lHy79SQc7soCNybwI/NzXdg==
+  dependencies:
+    "@enso-ui/switch" "^2.0"
+    "@enso-ui/themes" "^3.0"
+    "@enso-ui/ui" "^5.0"
+    "@fortawesome/fontawesome-svg-core" "^1.2.2"
+    "@fortawesome/free-solid-svg-icons" "^5.2.0"
+    "@fortawesome/vue-fontawesome" "3.0.0-5"
+    vue "^3.0"
+    vuex "^4.0.0"
+
+"@enso-ui/card@^3.0":
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/@enso-ui/card/-/card-3.0.5.tgz#422ea3aed6cefc8534e556de530f316a68a3d791"
+  integrity sha512-ios7nHelc6sWhlJtvqqgwhkfYSdYJ7Fz9ot1so9CVBqWSz0nCi6L0JDodL0MyEZ1dSXjPIPRSS2OVvfTTu3xyw==
+  dependencies:
+    "@enso-ui/dropdown-indicator" "^2.0"
+    "@enso-ui/loader" "^3.0"
+    "@fortawesome/fontawesome-svg-core" "^1.2.2"
+    "@fortawesome/free-solid-svg-icons" "^5.2.0"
+    "@fortawesome/vue-fontawesome" "3.0.0-5"
+    bulma "^0.9.0"
+    vue "^3.0"
+
+"@enso-ui/charts@^3.0":
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/@enso-ui/charts/-/charts-3.0.5.tgz#731441c20ed565a4cc623cd2193a3f0e8264de65"
+  integrity sha512-wy7ce5g82HoT43bmJVF7JTpUGvEWQxR5gv47Hu5UqDlhq3vSYGMBO9iE9As1J+aDL9+atUoBaJlZfrZ19KplFQ==
+  dependencies:
+    "@enso-ui/card" "^3.0"
+    "@enso-ui/directives" "^2.0"
+    "@enso-ui/mixins" "^3.0"
+    "@enso-ui/progress-circle" "^2.0"
+    "@fortawesome/fontawesome-svg-core" "^1.2.2"
+    "@fortawesome/free-solid-svg-icons" "^5.2.0"
+    "@fortawesome/vue-fontawesome" "3.0.0-5"
+    bulma "^0.9.0"
+    chart.js "^3.0.0"
+    chartjs-plugin-annotation "^1.0.2"
+    chartjs-plugin-datalabels "^2.0.0"
+    file-saver "^2.0"
+    vue "^3.0"
+
+"@enso-ui/checkbox@^3.0":
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/@enso-ui/checkbox/-/checkbox-3.0.5.tgz#ad2450c891e2105fcc5ad08276bb6308252da2ba"
+  integrity sha512-4wj8loAp+JkiVzX9ZF74upPXiymWxPaCf+wXE23NmIYtpg1u1mTXTTfZP7UVDw3/rarryGzN5P4OffR695z9oQ==
+  dependencies:
+    "@enso-ui/card" "^3.0"
+    bulma "^0.9.0"
+    vue "^3.0"
+
+"@enso-ui/clipboard@^2.0":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@enso-ui/clipboard/-/clipboard-2.0.5.tgz#762c8f488e120518d2d6f5d9b9811f8fb227c080"
+  integrity sha512-HlMiiZ6AJ/ACVfZqGn/tdV6KeTtRwOOzyzkqq1MpqWY9sDvffrcURn1T2pTVLNEgHZUHJq5urtXpjx3v2h+cAw==
+  dependencies:
+    vue "^3.0"
+
+"@enso-ui/companies@^4.0":
+  version "4.0.8"
+  resolved "https://registry.yarnpkg.com/@enso-ui/companies/-/companies-4.0.8.tgz#b2908700de81baf285d3cb91b54b3ba2fdbf440a"
+  integrity sha512-hAK+bL4Gb8sDPydz9jg7o68Cdf5JxnkGnspOr0mf4BNjC5wvnP19QD7oaaF5qU6pOl0//+DtN2Jd9rA7GMW+3w==
+  dependencies:
+    "@enso-ui/accessories" "^4.0"
+    "@enso-ui/addresses" "^2.0"
+    "@enso-ui/card" "^3.0"
+    "@enso-ui/confirmation" "^2.0"
+    "@enso-ui/forms" "^3.0"
+    "@enso-ui/modal" "^3.0"
+    "@enso-ui/tables" "^3.0"
+    "@enso-ui/tabs" "^2.0"
+    "@enso-ui/ui" "^5.0"
+    "@fortawesome/fontawesome-svg-core" "^1.2.2"
+    "@fortawesome/free-solid-svg-icons" "^5.2.0"
+    "@fortawesome/vue-fontawesome" "3.0.0-5"
+    v-tooltip "4.0.0-alpha.1"
+    vue "^3.0"
+    vuex "^4.0.0"
+
+"@enso-ui/confirmation@^2.0":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@enso-ui/confirmation/-/confirmation-2.0.5.tgz#2314f4632745296e283487fafd9e725c1a131ae0"
+  integrity sha512-vSDe2gf89tMtS3LfTQFmmkAxFS5f7Aysh5/saZIYBYXIxCWzXxGM60WJrOGL51mtP/vpaxRwI6bGrUcvv41psw==
   dependencies:
     "@fortawesome/fontawesome-svg-core" "^1.2.2"
     "@fortawesome/free-solid-svg-icons" "^5.2.0"
-    "@fortawesome/vue-fontawesome" "^0.1.1"
+    "@fortawesome/vue-fontawesome" "3.0.0-5"
     bulma "^0.9.0"
-    v-tooltip "^2.0.0"
-    vue "^2.5.16"
+    v-tooltip "4.0.0-alpha.1"
+    vue "^3.0"
 
-"@enso-ui/datepicker@^1.1":
-  version "1.1.18"
-  resolved "https://registry.yarnpkg.com/@enso-ui/datepicker/-/datepicker-1.1.18.tgz#0789c3e73cbbfdad395a5ef194d6beb901031d7a"
-  integrity sha512-wSbSNkUC/ReH8o2YTv7hJvo1QwDU72rhuuiOD32LY4tndSwP1Jre+CTDCJ+SQmkaioPLX9GBVJCLbOBwyFj26g==
+"@enso-ui/date@^1.0":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@enso-ui/date/-/date-1.0.6.tgz#9f02bb3e37e37ad80679517e921162ddf1f66760"
+  integrity sha512-wj4VOkpT+1Q7zSrkNrE3JPhVrx5dEZ8cqG9hXdguiC5Eu8+HAcNtSk5ZVfiNphUEINaPaIIN8Mn1R+mX2wcuhA==
+  dependencies:
+    date-fns "^2.0.0"
+
+"@enso-ui/datepicker@^2.0":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@enso-ui/datepicker/-/datepicker-2.0.5.tgz#4239a732a84687b2a418fbc5f17cf83d0f298ff1"
+  integrity sha512-pKua3iXEt4YPXIlv9k1+ubUKbZIHUElzW1tuKv3oAwnZwLAXxmKP6nE4DLCD5GMbDkpxZPjjSZmGIApM1O/dyw==
   dependencies:
     "@fortawesome/fontawesome-free" "^5.2.0"
     "@fortawesome/fontawesome-svg-core" "^1.2.2"
     "@fortawesome/free-solid-svg-icons" "^5.2.0"
-    "@fortawesome/vue-fontawesome" "^0.1.1"
+    "@fortawesome/vue-fontawesome" "3.0.0-5"
     bulma "^0.9.0"
     flatpickr "^4.5.0"
-    vue "^2.5.16"
-    vuex "^3.0.0"
+    v-tooltip "4.0.0-alpha.1"
+    vue "^3.0"
+    vuex "^4.0.0"
 
-"@enso-ui/directives@^1.0":
-  version "1.0.16"
-  resolved "https://registry.yarnpkg.com/@enso-ui/directives/-/directives-1.0.16.tgz#edf57f3512a87e1bea9d1da5368edb178dd92423"
-  integrity sha512-mvEJQtSGjBvcxOyOyDSpolsXkrIjaDiMFNATrBSFoRJw7AJE4Lmnc70xDPtf4Yzedpn/Da0QYnCb42aMKojzbw==
+"@enso-ui/directives@^2.0":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@enso-ui/directives/-/directives-2.0.5.tgz#4cdcd92fb5177a4cd9c410b7bf3e4048732663b3"
+  integrity sha512-jv4ajVKM+isz2Vf87vVrmjMtCkwJZbULbPIfTxJsPj2YofJvXZNn67OJoKn+esG5jlC08Am3BIxGe6CdaJ5uxQ==
   dependencies:
-    highlight.js "^9.12.0"
-    vue "^2.5.16"
+    highlight.js "^11.0"
+    vue "^3.0"
 
-"@enso-ui/divider@^1.0":
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/@enso-ui/divider/-/divider-1.0.8.tgz#e1668de6c35eb512feb38e836e14ddff125a634e"
-  integrity sha512-hR1wFQ3y6CYaVODJU7HSkOaWt92R0KLWypdsvMpG8nJtQ3zxWr6ZD6LsfyRVmFyx01xyifrhzXJv5jnT+8eS1Q==
+"@enso-ui/divider@^2.0":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@enso-ui/divider/-/divider-2.0.2.tgz#9b183ef7f9716e543f96f786cec6f41c70479594"
+  integrity sha512-Za7EMAaDBj8VSuJnvgCqtxq1YfUSU6qfEBbxMggkV2ozoFgPCwbV6bxqq4O9/BD3X4ohcOSJWSg6UwZll8enjw==
   dependencies:
-    vue "^2.5.16"
+    vue "^3.0"
 
-"@enso-ui/dropdown-indicator@^1.0":
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/@enso-ui/dropdown-indicator/-/dropdown-indicator-1.0.8.tgz#e473300bca3680ab324912b7b07c1bf1db96b04a"
-  integrity sha512-c8HpftKWQkMrj6WIV2ZrMu86rOpT2f37Zs7p70xFu5TtL8+y5K20xB4I6XHUgMkZX0B3t15BkaVrnn+yeOKJGw==
+"@enso-ui/dropdown-indicator@^2.0":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@enso-ui/dropdown-indicator/-/dropdown-indicator-2.0.5.tgz#2b4950b8dfce9b8044cf48b681df94645c3e0603"
+  integrity sha512-7N3Nq0hCYPtfHIkJDLTg4aGwp5O6lS6XopM+16hp1WX2c/scavB3h6K4na9hgc8tTstlvaqr6xs7gdYsUfJ6nQ==
   dependencies:
     "@fortawesome/fontawesome-svg-core" "^1.2.2"
     "@fortawesome/free-solid-svg-icons" "^5.2.0"
-    "@fortawesome/vue-fontawesome" "^0.1.1"
-    vue "^2.5.16"
+    "@fortawesome/vue-fontawesome" "3.0.0-5"
+    vue "^3.0"
 
-"@enso-ui/dropdown@^2.0":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@enso-ui/dropdown/-/dropdown-2.1.1.tgz#a374671711497eef7b3a07a1420952fb52417e51"
-  integrity sha512-T/PeUgbwlTl0P0fg981bmJivewL7acxcNouv0RAMPVfdoKNvrM7KhQXVaGQ0ny/qdA10ZVkZ5lVEEvO21TX75g==
+"@enso-ui/dropdown@^3.0":
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/@enso-ui/dropdown/-/dropdown-3.0.5.tgz#b874b63bb71c7c5313b57569eb7bd61224df6155"
+  integrity sha512-7ZbjmDX8iybBdYlNiCeZX36fG1iegunfh+keF+s9xZjep9G+jtvo2pjMQtOmLZ9/zJ+Z4eiBmdar0Ii/a7qdwg==
   dependencies:
-    "@enso-ui/directives" "^1.0"
-    "@enso-ui/dropdown-indicator" "^1.0"
-    "@enso-ui/transitions" "^1.0"
-    vue "^2.5.16"
+    "@enso-ui/directives" "^2.0"
+    "@enso-ui/dropdown-indicator" "^2.0"
+    "@enso-ui/transitions" "^2.0"
+    vue "^3.0"
 
-"@enso-ui/forms@^2.0":
-  version "2.3.19"
-  resolved "https://registry.yarnpkg.com/@enso-ui/forms/-/forms-2.3.19.tgz#15f2964f0968635bee26de766ae7b7cda45e75ef"
-  integrity sha512-9kDUxecPAxRt20GWfcO9BnLtJnoaYzzn9vod0AE3pk3g0CJiiocHtrNgPdxkusbx1lZ9I2SsrQ0xDcjhCnMsGQ==
+"@enso-ui/enums@^1.0":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@enso-ui/enums/-/enums-1.0.8.tgz#09528d9f48b858e0729b62b9a3be4916a7b3c7e4"
+  integrity sha512-4bmx5kxgDgN0a3wIow5TTiq0dMR0J/Th6QMuyy8gmUbYslwwE1LwLIzI2d1zcddwUUz7QbAmObIwcMsb2XgQFQ==
+
+"@enso-ui/files@^4.0":
+  version "4.0.6"
+  resolved "https://registry.yarnpkg.com/@enso-ui/files/-/files-4.0.6.tgz#62eb23da18afe1fc576fa8fae6985eb13df059c2"
+  integrity sha512-uVj8losh2RmkYkfqFsi3hiq60pcZFa6+6MU7fXhVnVRjCcnw85eW0XketHk/sS5VBhWfZctKKUO/X3GWv6Ti9g==
   dependencies:
-    "@enso-ui/datepicker" "^1.1"
-    "@enso-ui/directives" "^1.0"
-    "@enso-ui/divider" "^1.0"
-    "@enso-ui/laravel-validation" "^1.0"
-    "@enso-ui/modal" "^2.0"
-    "@enso-ui/money" "^1.0"
-    "@enso-ui/select" "^2.0"
-    "@enso-ui/switch" "^1.0"
-    "@enso-ui/tabs" "^1.0"
-    "@enso-ui/wysiwyg" "^1.0"
+    "@enso-ui/charts" "^3.0"
+    "@enso-ui/clipboard" "^2.0"
+    "@enso-ui/confirmation" "^2.0"
+    "@enso-ui/directives" "^2.0"
+    "@enso-ui/filters" "^3.0"
+    "@enso-ui/mixins" "^3.0"
+    "@enso-ui/modal" "^3.0"
+    "@enso-ui/tabs" "^2.0"
+    "@enso-ui/ui" "^5.0"
+    "@enso-ui/uploader" "^2.0"
+    "@fortawesome/fontawesome-svg-core" "^1.2.2"
+    "@fortawesome/free-solid-svg-icons" "^5.2.0"
+    "@fortawesome/vue-fontawesome" "3.0.0-5"
+    lodash "^4.17.10"
+    v-tooltip "4.0.0-alpha.1"
+    vue "^3.0"
+    vuex "^4.0.0"
+
+"@enso-ui/filters@^3.0":
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/@enso-ui/filters/-/filters-3.0.5.tgz#2caf983d2d3e1c742f7e907e4d9bda2fba06e8f5"
+  integrity sha512-Rtp2fTiAbZZbCX2pikAbOVyQklb5Rn8KSStk47dkUjYpAHuKNM75NvqicD7nz02iq3Zradbm0MeGX8giKgJhzQ==
+  dependencies:
+    "@enso-ui/datepicker" "^2.0"
+    "@enso-ui/select" "^3.0"
+    "@enso-ui/strings" "^2.0"
+    "@enso-ui/switch" "^2.0"
+    "@enso-ui/transitions" "^2.0"
+    "@fortawesome/fontawesome-svg-core" "^1.2.2"
+    "@fortawesome/free-solid-svg-icons" "^5.2.0"
+    "@fortawesome/vue-fontawesome" "3.0.0-5"
+    bulma "^0.9.0"
+    date-fns "^2.0.0"
+    v-tooltip "4.0.0-alpha.1"
+    vue "^3.0"
+    vuex "^4.0.0"
+
+"@enso-ui/forms@^3.0":
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/@enso-ui/forms/-/forms-3.0.5.tgz#6ab509e6522a655f1cc0da44cb107432db7a0d0e"
+  integrity sha512-S2znpcl9NIXW+mGXfsJPRnx9XBIv/jiQrN83TPCAxy2hQhcNaVASh0yaVuqVat/r2J8Xxc6PiFWZj0llED3Ctw==
+  dependencies:
+    "@enso-ui/datepicker" "^2.0"
+    "@enso-ui/directives" "^2.0"
+    "@enso-ui/divider" "^2.0"
+    "@enso-ui/laravel-validation" "^2.0"
+    "@enso-ui/modal" "^3.0"
+    "@enso-ui/money" "^2.0"
+    "@enso-ui/select" "^3.0"
+    "@enso-ui/switch" "^2.0"
+    "@enso-ui/tabs" "^2.0"
+    "@enso-ui/wysiwyg" "^2.0"
     "@fortawesome/fontawesome-free" "^5.2.0"
     "@fortawesome/fontawesome-svg-core" "^1.2.2"
     "@fortawesome/free-solid-svg-icons" "^5.2.0"
-    "@fortawesome/vue-fontawesome" "^0.1.1"
-    accounting-js "^1.1.1"
+    "@fortawesome/vue-fontawesome" "3.0.0-5"
     bulma "^0.9.0"
-    dropzone "^5.5.1"
     lodash "^4.17.10"
-    v-tooltip "^2.0.0-rc.33"
-    vue "^2.5.16"
-    vuex "^3.1.0"
+    v-tooltip "4.0.0-alpha.1"
+    vue "^3.0"
+    vuex "^4.0.0"
 
-"@enso-ui/google@^1.0":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@enso-ui/google/-/google-1.0.2.tgz#e2c06ebfa71e97ae08bb328e731273409207c64a"
-  integrity sha512-JZmavIUiYCvF2VhnqTcAhqFa742MopnNzf88R8IGd4myOfqZ196B6l/p/eQRfy9u0wKpSWybSW6CliNg82U7hw==
+"@enso-ui/google@^2.0":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@enso-ui/google/-/google-2.0.4.tgz#eaf37cd2a346e074b1aa074159098cd87ad53148"
+  integrity sha512-n0axbruo4bm491PWlMgeDzQbRFqFy7X/k7LtmylmqNCL+I52YGf6u42o+wyiPuR5mB5B9dGFzc0qbN16rtLdxw==
   dependencies:
-    "@enso-ui/loader" "^2.0"
-    "@enso-ui/mixins" "^2.0"
+    "@enso-ui/forms" "^3.0"
+    "@enso-ui/ui" "^5.0"
     "@fortawesome/fontawesome-svg-core" "^1.2.2"
     "@fortawesome/free-regular-svg-icons" "^5.2.0"
     "@fortawesome/free-solid-svg-icons" "^5.2.0"
-    v-tooltip "^2.0.0"
-    vue "^2.5.16"
-    vuex "^3.0.0"
+    vue "^3.0"
 
-"@enso-ui/laravel-validation@^1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@enso-ui/laravel-validation/-/laravel-validation-1.1.0.tgz#2d83bea71d6d312ca7d6a1b58083a542b7fa4dc9"
-  integrity sha512-kpKxZSYYGLhhFweAIYaj0EMGomM/xCrlgZG/R4gJcLn7wocGTQwzWmUF8rEzO8JbW4b4qZsaYnENQVLu0kgS5g==
-
-"@enso-ui/loader@^2.0":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@enso-ui/loader/-/loader-2.0.1.tgz#f9c1c8cf6baf6691a63c2068ae93b75a8ea59b47"
-  integrity sha512-+AW0+hDZwyJlHUunexNxhbh0ERvHJq2lB4cD1tbS8HgPlcai13PVlt7UdRY69p8UoIkw/iD/OlTRLg+g8ZHTew==
+"@enso-ui/io@^2.0":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@enso-ui/io/-/io-2.0.5.tgz#9b93bba2856798a321d1eee09e50bbf4acb99e66"
+  integrity sha512-iZso8YSXWwLQVU02tV87d15JOSSsl1uhn3ETCCC8QkDWj+p74Bcm73aOXVNJWpFDV0KeqxEaMKvP3Uw2zjhX/Q==
   dependencies:
-    "@enso-ui/transitions" "^1.0"
+    "@enso-ui/directives" "^2.0"
+    "@enso-ui/ui" "^5.0"
+    "@fortawesome/fontawesome-svg-core" "^1.2.2"
+    "@fortawesome/free-solid-svg-icons" "^5.2.0"
+    "@fortawesome/vue-fontawesome" "3.0.0-5"
+    vue "^3.0"
+    vuex "^4.0.0"
+
+"@enso-ui/laravel-validation@^2.0":
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@enso-ui/laravel-validation/-/laravel-validation-2.0.3.tgz#0b844efbd48ca1247a4e08ecec29f6629ca24278"
+  integrity sha512-jXfNv7ISCcoBk1iXo6jSIHiMcGL/O6YRF9iNAUIRsBX0DZg7GIYoMMU9bTDC6kYf9ilhedqp/IZbbCwiCfyXtg==
+
+"@enso-ui/loader@^3.0":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@enso-ui/loader/-/loader-3.0.4.tgz#7dfabfbddb48042f901ae23b94a2762e386eae71"
+  integrity sha512-V06xbqCXMBIK1O8Bm0uasCmkekR8dlzN4cZrIr+3PadraO29c2qJNCKatnk9aMZcjZrbGwhBAjKBC93ndUExbw==
+  dependencies:
+    "@enso-ui/transitions" "^2.0"
     bulma "^0.9.0"
-    vue "^2.5.16"
+    vue "^3.0"
 
-"@enso-ui/mixins@^2.0":
-  version "2.1.8"
-  resolved "https://registry.yarnpkg.com/@enso-ui/mixins/-/mixins-2.1.8.tgz#d9a14ac16992aa4f2384f164284d463cd1560098"
-  integrity sha512-3bT9F1FWEhM9nGjavqs3Q67kO81Amodd6uYVBxYZa8O4PgF9j7Ydshyz5k3NWfE+JEgJ/iTw8XSh/jzbrUup6Q==
+"@enso-ui/localisation@^4.0":
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/@enso-ui/localisation/-/localisation-4.0.5.tgz#d4b095379c00a60b1d7d61afddfba7624f7f0261"
+  integrity sha512-LcafvmqzPlnR6kFhlOWjP7p9kw5X30kYe2Z7T5xARoAjbZsx825Q08M24udr330SwJswQq91J7Ot5aS4zOXWiw==
   dependencies:
+    "@enso-ui/directives" "^2.0"
+    "@enso-ui/dropdown" "^3.0"
+    "@enso-ui/forms" "^3.0"
+    "@enso-ui/select" "^3.0"
+    "@enso-ui/switch" "^2.0"
+    "@enso-ui/tables" "^3.0"
+    "@enso-ui/ui" "^5.0"
+    "@fortawesome/fontawesome-svg-core" "^1.2.2"
+    "@fortawesome/free-solid-svg-icons" "^5.2.0"
+    "@fortawesome/vue-fontawesome" "3.0.0-5"
+    vue "^3.0"
+    vuex "^4.0.0"
+
+"@enso-ui/logs@^4.0":
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/@enso-ui/logs/-/logs-4.0.5.tgz#c0b4fa406cfe8563747e01da943d2c0300a0b908"
+  integrity sha512-EeLel4L1I/qj3/WIcyX3M3o/9vgg9V5RuIs/jm3rwKHJOzdZEAIMmj62yT8wCreS4DjbvO6jjhVwnSoO9u0c6w==
+  dependencies:
+    "@enso-ui/card" "^3.0"
+    "@enso-ui/confirmation" "^2.0"
+    "@enso-ui/directives" "^2.0"
+    "@enso-ui/ui" "^5.0"
+    "@fortawesome/fontawesome-svg-core" "^1.2.2"
+    "@fortawesome/free-solid-svg-icons" "^5.2.0"
+    "@fortawesome/vue-fontawesome" "3.0.0-5"
+    vue "^3.0"
+
+"@enso-ui/menus@^4.0":
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/@enso-ui/menus/-/menus-4.0.5.tgz#3083d874af6af34014e87ed4c4f0d8acdd8a839d"
+  integrity sha512-CnEbMRPjkohN0bb7h93zuWjWQ1Jr9Mc6xoBwM+0ENPTDiiEgf9pyOI/kqMU+nFRVyGJnfDazpjF2DAESJ8hDbQ==
+  dependencies:
+    "@enso-ui/dropdown-indicator" "^2.0"
+    "@enso-ui/forms" "^3.0"
+    "@enso-ui/switch" "^2.0"
+    "@enso-ui/tables" "^3.0"
+    "@enso-ui/themes" "^3.0"
+    "@enso-ui/transitions" "^2.0"
+    "@enso-ui/ui" "^5.0"
+    "@fortawesome/fontawesome-svg-core" "^1.2.2"
+    "@fortawesome/free-solid-svg-icons" "^5.2.0"
+    "@fortawesome/vue-fontawesome" "3.0.0-5"
+    vue "^3.0"
+    vuex "^4.0.0"
+
+"@enso-ui/mixins@^3.0":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@enso-ui/mixins/-/mixins-3.0.4.tgz#0eaaa57fc04d1799563213a75ad76d9638758367"
+  integrity sha512-WzbRgMy5hFBzuOcJs6oqZLAfbUdeYwWTFGOHMoQ4Yna86RsHwFBbh5LJKsiNF0OhIaBd8EDDhHjHVIpjblUULA==
+  dependencies:
+    "@fortawesome/fontawesome-svg-core" "^1.2.2"
+    "@fortawesome/free-solid-svg-icons" "^5.2.0"
+    "@sentry/browser" "^6.9.0"
+    vue "^3.0"
+    vue-router "^4.0"
+
+"@enso-ui/modal@^3.0":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@enso-ui/modal/-/modal-3.0.4.tgz#037b31dc7b3933d2537ec892c3f0c86a5309bd92"
+  integrity sha512-ruqAdZnxHgNm8JvQLMj5gdhA6eL3+r4rp1oiDS1Z7BVol8VquWnr5J81jUf/IzhTkdY9kGSKdRNTaE3firU2fA==
+  dependencies:
+    "@enso-ui/transitions" "^2.0"
+    bulma "^0.9.0"
+    vue "^3.0"
+
+"@enso-ui/money@^2.0":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@enso-ui/money/-/money-2.0.4.tgz#58fd497438931c913f1767006e0a1f6f4993cc51"
+  integrity sha512-VlmGJ5sXYXAfVQbbZoDZZqvM6yRPn4oAykVE7OtAcOL+qTBR9emhLxyj0CnfT5qUYQz9EBlGO8ingjw8zlsS+w==
+  dependencies:
+    accounting-js "^1.1.1"
+    vue "^3.0"
+
+"@enso-ui/notifications@^2.0":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@enso-ui/notifications/-/notifications-2.0.5.tgz#aa00d8deef7b7190dc5fc2c7e77754d87554995e"
+  integrity sha512-8kTwsjxRcYcCfK0a6Lr64zlJLPtUkk+abySFctVrYVTYvXl9ej0ZVmMkLrzr2xTVoP2CX0Hc2eBkwVyKo/DSFQ==
+  dependencies:
+    "@enso-ui/directives" "^2.0"
+    "@enso-ui/dropdown" "^3.0"
+    "@enso-ui/toastr" "^3.0"
+    "@enso-ui/ui" "^5.0"
+    "@fortawesome/fontawesome-svg-core" "^1.2.2"
+    "@fortawesome/free-solid-svg-icons" "^5.2.0"
+    "@fortawesome/vue-fontawesome" "3.0.0-5"
+    favico.js "^0.3.10"
+    lodash "^4.17.20"
+    vue "^3.0"
+    vuex "^4.0.0"
+
+"@enso-ui/people@^4.0":
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/@enso-ui/people/-/people-4.0.4.tgz#5929440314aef992046ca3bca64f268c77a115e4"
+  integrity sha512-bB2ibATkCz3w5smuuQwtRkpbs1SqWaWIml6vEwnLwYWWXkFrzIHr/aGZSAuW55R53/cpHRXV3q2ce7dPns1sgA==
+  dependencies:
+    "@enso-ui/accessories" "^4.0"
+    "@enso-ui/addresses" "^2.0"
+    "@enso-ui/forms" "^3.0"
+    "@enso-ui/tables" "^3.0"
+    "@enso-ui/tabs" "^2.0"
+    "@enso-ui/ui" "^5.0"
+    "@fortawesome/fontawesome-svg-core" "^1.2.2"
+    "@fortawesome/free-solid-svg-icons" "^5.2.0"
+    "@fortawesome/vue-fontawesome" "3.0.0-5"
+    vue "^3.0"
+
+"@enso-ui/permissions@^4.0":
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/@enso-ui/permissions/-/permissions-4.0.4.tgz#6d76bace68327b3b31524c4e34a5cabb5269038e"
+  integrity sha512-2feNHXW7rjWKjpxhNPvGVil02XhcqxR3xIwcjNe21PY8XcinO3q0p6jFdOWrPDKFc84/+9+QenV6oprB+/AKQw==
+  dependencies:
+    "@enso-ui/forms" "^3.0"
+    "@enso-ui/tables" "^3.0"
+    "@enso-ui/ui" "^5.0"
+    "@fortawesome/fontawesome-svg-core" "^1.2.25"
+    "@fortawesome/free-solid-svg-icons" "^5.11.2"
+    vue "^3.0"
+
+"@enso-ui/progress-bar@^2.0":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@enso-ui/progress-bar/-/progress-bar-2.0.4.tgz#9d16059a8a40dccfd1bf6b98d49d7eb896b3b56b"
+  integrity sha512-zb0/AtW8xwxpw3S+YdKpBvHKkxFeRO4hwGvBbi69QS+U3u4Nv5vdKGgWps6ZTz77ANypdy65614hZwXi9C5gUw==
+  dependencies:
+    vue "^3.0"
+
+"@enso-ui/progress-circle@^2.0":
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/@enso-ui/progress-circle/-/progress-circle-2.0.6.tgz#def346dcc793739e6d8c87eed13cff8aa00d9279"
+  integrity sha512-jEkO0YwuQwza4OPLDEbDtlCfF1k+mCSg28u+7reDG2g1cDd64Nbextxo4pNAh1asIMbYSVenbgDhUg2dU9F8nw==
+  dependencies:
+    gsap "^3.8"
+    vue "^3.0"
+
+"@enso-ui/roles@^4.0":
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/@enso-ui/roles/-/roles-4.0.4.tgz#65901979fc92cf489300d93dac6ca9237337b14b"
+  integrity sha512-LfjPBSZXE49h2l4HDgc9z1eAU9yb/AIaDdQxT8R0JwMvuoiEOwBjKGBmCHEkFTcum/q0K6Bj/1gaV58T27K9oA==
+  dependencies:
+    "@enso-ui/checkbox" "^3.0"
+    "@enso-ui/forms" "^3.0"
+    "@enso-ui/permissions" "^4.0"
+    "@enso-ui/tables" "^3.0"
+    "@enso-ui/ui" "^5.0"
+    "@fortawesome/fontawesome-svg-core" "^1.2.2"
+    "@fortawesome/free-solid-svg-icons" "^5.2.0"
+    "@fortawesome/vue-fontawesome" "3.0.0-5"
+    vue "^3.0"
+    vuex "^4.0.0"
+
+"@enso-ui/route-mapper@^1.0":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@enso-ui/route-mapper/-/route-mapper-1.0.6.tgz#70e8006aee907197d2a572b4403e9ff917adb7be"
+  integrity sha512-F6Y9J4BDrPnG/kB9IHbVIvf2aHQrQ0jGo5WqRaOmgTCYT2oF6PWgeZn82H/ffRLeXj/m37ptTnPrRIhBNaYlDg==
+
+"@enso-ui/scroll-to-top@^3.0":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@enso-ui/scroll-to-top/-/scroll-to-top-3.0.4.tgz#6f35e0a3e89f00c107dcb5b028ebadcf122240e1"
+  integrity sha512-lS5I7cohehJho/lhYH9ADE/zM0YH0DjuxxSsQkteWZ6fp0Ymm6xbx36LZ23667/6A30twJ92RENFtG3MBfsh+Q==
+  dependencies:
+    "@enso-ui/transitions" "^2.0"
+    "@fortawesome/fontawesome-svg-core" "^1.2.2"
+    "@fortawesome/free-solid-svg-icons" "^5.2.0"
+    "@fortawesome/vue-fontawesome" "3.0.0-5"
+    bulma "^0.9.0"
+    vue "^3.0"
+
+"@enso-ui/search-mode@^3.0":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@enso-ui/search-mode/-/search-mode-3.0.4.tgz#67c9a2eaa79e7ccbbe688833dcf46951bfc2e23d"
+  integrity sha512-oWN/XBwUHzzTqDj/a34ZUxIGzzywN14Wp6lZ5hxTZ2tyTI/fODrewQRtFmf6waimp6vYpf1kv1mD1DMk911sWQ==
+  dependencies:
+    "@fortawesome/fontawesome-svg-core" "^1.2.2"
+    "@fortawesome/free-brands-svg-icons" "^5.13.0"
+    "@fortawesome/free-solid-svg-icons" "^5.2.0"
+    "@fortawesome/vue-fontawesome" "3.0.0-5"
+    bulma "^0.9.0"
+    vue "^3.0"
+
+"@enso-ui/select@^3.0":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@enso-ui/select/-/select-3.0.4.tgz#76791e0dad05867490cea24a93c980035cd54401"
+  integrity sha512-xJUNAsNnzS/HflG7l6WDIjOs2Xlz3B0CzXnlvyKaakess8TQAQ/0y2vuxWRLPGXk5lUrlQOu3bRWXsCv1Uhz0g==
+  dependencies:
+    "@enso-ui/directives" "^2.0"
+    "@enso-ui/dropdown" "^3.0"
+    "@enso-ui/dropdown-indicator" "^2.0"
+    "@enso-ui/search-mode" "^3.0"
+    "@fortawesome/fontawesome-free" "^5.2.0"
+    "@fortawesome/fontawesome-svg-core" "^1.2.2"
+    "@fortawesome/free-solid-svg-icons" "^5.2.0"
+    "@fortawesome/vue-fontawesome" "3.0.0-5"
+    bulma "^0.9.0"
+    lodash "^4.17.10"
+    vue "^3.0"
+
+"@enso-ui/sentry@^1.0":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@enso-ui/sentry/-/sentry-1.0.8.tgz#7e1627c02a097ca348399f4a8bd75704fee5d1af"
+  integrity sha512-ydE4OovRN+HR63y1MJhQ4vNADnqp7qc8ZhZztU1z3SaA/h4ycTo+At9+wml4WVfmc6kuYgIFEHS4iv6kqbiPmw==
+
+"@enso-ui/strings@^2.0":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@enso-ui/strings/-/strings-2.0.4.tgz#7e2ca4570038e2f350b6ee54da409fe854e39d46"
+  integrity sha512-zQnGWb3iAAGzqbMXwM1olZQiDaNFc571K/aXkueOSeG19G6nBrm0WbGVWN/KFOaagChV/C6/5Br9BwRMwUG4Nw==
+
+"@enso-ui/switch@^2.0":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@enso-ui/switch/-/switch-2.0.4.tgz#3b795ee71fca2b28774bc4cefbd57a7c090f245e"
+  integrity sha512-jO96/ASaESb5HDilfHeNqhCgutb1Gny66r+a4hnWcr3ZI2GNiABwax5gWdwi8DHJkaY2ZIDTNsmar385SSzZsw==
+  dependencies:
+    bulma "^0.9.0"
+    vue "^3.0"
+
+"@enso-ui/tables@^3.0":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@enso-ui/tables/-/tables-3.0.4.tgz#c82e512190cc25d0a8145023196566fc7920dab8"
+  integrity sha512-d3uO0dooFGp4eLwl0DsWxcmjzoICS32JxClwEAIqRiJH3fFuqx0dRAza/B5zOc88e/i1bxy4Nwe7moCXnzkQBg==
+  dependencies:
+    "@enso-ui/date" "^1.0"
+    "@enso-ui/datepicker" "^2.0"
+    "@enso-ui/directives" "^2.0"
+    "@enso-ui/dropdown" "^3.0"
+    "@enso-ui/enums" "^1.0"
+    "@enso-ui/loader" "^3.0"
+    "@enso-ui/modal" "^3.0"
+    "@enso-ui/search-mode" "^3.0"
+    "@enso-ui/select" "^3.0"
+    "@enso-ui/switch" "^2.0"
+    "@fortawesome/fontawesome-free" "^5.2.0"
+    "@fortawesome/fontawesome-svg-core" "^1.2.2"
+    "@fortawesome/free-solid-svg-icons" "^5.2.0"
+    "@fortawesome/vue-fontawesome" "3.0.0-5"
+    css-element-queries "^1.1.1"
+    lodash "^4.17.11"
+    v-tooltip "4.0.0-alpha.1"
+    vue "^3.0"
+    vuex "^4.0.0"
+
+"@enso-ui/tabs@^2.0":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@enso-ui/tabs/-/tabs-2.0.4.tgz#70870daddd8f58bfe8691aae123661d5ab7e0ad1"
+  integrity sha512-f9JjJVMJqO9Y4mB0J9KdfhrRFuSVcEd7D2kdL8IzbrYig4rDCR+YzDGKDNsLZQyKIujzlFgv7PoBbnhtZLgMfA==
+  dependencies:
+    animate.css "^4.0.0"
+    bulma "^0.9.0"
+    vue "^3.0"
+
+"@enso-ui/themes@^3.0":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@enso-ui/themes/-/themes-3.0.4.tgz#0dbbf797bfb712eac68857a8ced6a13238c2bb00"
+  integrity sha512-UsKr4vzu4+We39mDLffK3lPhgAEVthwgn8p7s0dOmllAh3OBpyqMa587gTl3JChLT8MbS3kEnuTlXrycJ2xY1w==
+  dependencies:
+    "@fortawesome/fontawesome-svg-core" "^1.2.2"
+    "@fortawesome/free-solid-svg-icons" "^5.2.0"
+    "@fortawesome/vue-fontawesome" "3.0.0-5"
+    bulma "^0.9.0"
+    bulma-extensions "^6.0.0"
+    flatpickr "^4.5.0"
+
+"@enso-ui/toastr@^3.0":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@enso-ui/toastr/-/toastr-3.0.4.tgz#d63ba842ea0535f096677f49aab8c7edbe74c3a6"
+  integrity sha512-xBqy4q/LMvxEU14luUI+1YW2xk4qju46QMsq1Wf6Sk0BZTtqZSIymX99nVg31ruqyQienbE8CuTZq3JoEpCDIw==
+  dependencies:
+    "@enso-ui/progress-bar" "^2.0"
+    "@fortawesome/fontawesome-free" "^5.2.0"
+    "@fortawesome/fontawesome-svg-core" "^1.2.2"
+    "@fortawesome/free-solid-svg-icons" "^5.2.0"
+    "@fortawesome/vue-fontawesome" "3.0.0-5"
+    animate.css "^4.0.0"
+    bulma "^0.9.0"
+    vue "^3.0"
+
+"@enso-ui/transitions@^2.0":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@enso-ui/transitions/-/transitions-2.0.5.tgz#1dc19f481305f2f054c7a8f2fe680740932723ea"
+  integrity sha512-G6ro18tzV1anFnQUBxQgibn1LfsbQ0EvsuO4uzS/Wds7z1UOGvZ37pUB4VwzCRupXpek0RhPP8CfqTSR0T+DzQ==
+  dependencies:
+    animate.css "^4.0.0"
+    vue "^3.0"
+
+"@enso-ui/typeahead@^3.0":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@enso-ui/typeahead/-/typeahead-3.0.4.tgz#4fd598cf9569e05c0b78108812041e59983191ab"
+  integrity sha512-NsfUoqScswH855LTQ6DNybVfyIzD3aDkmYmaM32eaIBtDCQ3AakIF18rf7Y7VElNBU64DxPHzGwBg/pxmPOerw==
+  dependencies:
+    "@enso-ui/dropdown" "^3.0"
+    "@enso-ui/search-mode" "^3.0"
+    "@fortawesome/fontawesome-svg-core" "^1.2.2"
+    "@fortawesome/free-solid-svg-icons" "^5.2.0"
+    "@fortawesome/vue-fontawesome" "3.0.0-5"
+    lodash "^4.17.10"
+    vue "^3.0"
+
+"@enso-ui/ui@^5.0":
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/@enso-ui/ui/-/ui-5.0.8.tgz#424dcb55e8bbddc267a8769c51d26a0841fdc7d4"
+  integrity sha512-vWb9p/js30Teruh2JYDqrp7qsUJbgdB7NGMKerjWqi/xL9XNsZUlX85fta4H1uFOTnpVX1hhtWzJoUwzC9q4Lg==
+  dependencies:
+    "@enso-ui/accessories" "^4.0"
+    "@enso-ui/auth" "^2.0"
+    "@enso-ui/bookmarks" "^2.0"
+    "@enso-ui/charts" "^3.0"
+    "@enso-ui/companies" "^4.0"
+    "@enso-ui/confirmation" "^2.0"
+    "@enso-ui/date" "^1.0"
+    "@enso-ui/directives" "^2.0"
+    "@enso-ui/divider" "^2.0"
+    "@enso-ui/dropdown" "^3.0"
+    "@enso-ui/dropdown-indicator" "^2.0"
+    "@enso-ui/enums" "^1.0"
+    "@enso-ui/files" "^4.0"
+    "@enso-ui/forms" "^3.0"
+    "@enso-ui/io" "^2.0"
+    "@enso-ui/laravel-validation" "^2.0"
+    "@enso-ui/loader" "^3.0"
+    "@enso-ui/localisation" "^4.0"
+    "@enso-ui/logs" "^4.0"
+    "@enso-ui/menus" "^4.0"
+    "@enso-ui/mixins" "^3.0"
+    "@enso-ui/modal" "^3.0"
+    "@enso-ui/notifications" "^2.0"
+    "@enso-ui/people" "^4.0"
+    "@enso-ui/permissions" "^4.0"
+    "@enso-ui/progress-bar" "^2.0"
+    "@enso-ui/roles" "^4.0"
+    "@enso-ui/route-mapper" "^1.0"
+    "@enso-ui/scroll-to-top" "^3.0"
+    "@enso-ui/sentry" "^1.0"
+    "@enso-ui/switch" "^2.0"
+    "@enso-ui/tables" "^3.0"
+    "@enso-ui/tabs" "^2.0"
+    "@enso-ui/themes" "^3.0"
+    "@enso-ui/toastr" "^3.0"
+    "@enso-ui/transitions" "^2.0"
+    "@enso-ui/typeahead" "^3.0"
+    "@enso-ui/uploader" "^2.0"
+    "@enso-ui/user-groups" "^2.0"
+    "@enso-ui/users" "^2.0"
     "@fortawesome/fontawesome-free" "^5.2.0"
     "@fortawesome/fontawesome-svg-core" "^1.2.2"
     "@fortawesome/free-brands-svg-icons" "^5.2.0"
     "@fortawesome/free-regular-svg-icons" "^5.2.0"
     "@fortawesome/free-solid-svg-icons" "^5.2.0"
-    "@fortawesome/vue-fontawesome" "^0.1.1"
+    "@fortawesome/vue-fontawesome" "3.0.0-5"
     "@sentry/browser" "^6.9.0"
-    vue "^2.5.16"
-    vue-router "^3.0.1"
-
-"@enso-ui/modal@^2.0":
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/@enso-ui/modal/-/modal-2.0.6.tgz#2a3755e624d655204aa5e795f1152360527bcb22"
-  integrity sha512-+tfSIbZ+O1j1wWDXCABAzxWeNYFu3qBF7GvGVYM60lwzxY9IL4KcUTNml/VM/5f4PQnePZDDGpzU9gWNfxt0ww==
-  dependencies:
-    "@enso-ui/transitions" "^1.0"
-    bulma "^0.9.0"
-    vue "^2.5.16"
-
-"@enso-ui/money@^1.0":
-  version "1.0.13"
-  resolved "https://registry.yarnpkg.com/@enso-ui/money/-/money-1.0.13.tgz#0ba7bb4aec6616d757fae52c8b9704ba527e9b41"
-  integrity sha512-I9UMIXhQd/YfilocMfFc4eroMcFOnRUUgfMVTf3zI5uNhTzDnqYsgmTEneg6f/A1OErbiJq5FgzKDFEtWAxaAA==
-  dependencies:
-    accounting-js "^1.1.1"
-    vue "^2.5.16"
-
-"@enso-ui/search-mode@^2.0":
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/@enso-ui/search-mode/-/search-mode-2.0.3.tgz#0737ff04d68a396680ed13022c4b84ab463ebd69"
-  integrity sha512-ovqRrOcBtSTWZx1S/Q3hZxXu5XVkim1wJPhqRU4E9cy/c7/v0pUeSawERD0thHaEONi2S10TAtyPOYT0r0KkEw==
-  dependencies:
-    "@fortawesome/fontawesome-svg-core" "^1.2.2"
-    "@fortawesome/free-brands-svg-icons" "^5.13.0"
-    "@fortawesome/free-solid-svg-icons" "^5.2.0"
-    bulma "^0.9.0"
-    vue "^2.5.16"
-
-"@enso-ui/select@^2.0":
-  version "2.1.9"
-  resolved "https://registry.yarnpkg.com/@enso-ui/select/-/select-2.1.9.tgz#7c629a7dce7416cbabd9829ddf574d07b7b15ecc"
-  integrity sha512-5Ad8WRSZ6fayN3NIr9QUU+cTcra50hd1pEXuDZM7RkKapAg00SQmrMCUPAih71UT99uDYNiuSC9c+7zFTx25Gw==
-  dependencies:
-    "@enso-ui/directives" "^1.0"
-    "@enso-ui/dropdown" "^2.0"
-    "@enso-ui/dropdown-indicator" "^1.0"
-    "@enso-ui/search-mode" "^2.0"
-    "@fortawesome/fontawesome-free" "^5.2.0"
-    "@fortawesome/fontawesome-svg-core" "^1.2.2"
-    "@fortawesome/free-solid-svg-icons" "^5.2.0"
-    "@fortawesome/vue-fontawesome" "^0.1.1"
-    bulma "^0.9.0"
-    lodash "^4.17.10"
-    vue "^2.5.16"
-
-"@enso-ui/switch@^1.0":
-  version "1.0.20"
-  resolved "https://registry.yarnpkg.com/@enso-ui/switch/-/switch-1.0.20.tgz#46354af5c1a1d417e129c44bb0858f288319aeff"
-  integrity sha512-ky9v2iJj7tKJZItTvAzY626wN6gNtfKHgx5NjZuSEesvT9ZMKDiJ9MieU4f27fcRk2YhW4v40WAw02/2rxwyQQ==
-  dependencies:
-    bulma "^0.9.0"
-    vue "^2.5.16"
-
-"@enso-ui/tabs@^1.0":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@enso-ui/tabs/-/tabs-1.1.1.tgz#d2ba947cb46ab60684e440c8c500b9be08c5b862"
-  integrity sha512-0tc93LcNPxPqPY3qnVwKSXfAWPuo/eqKRPueF9MC7TYs1VCQeDxOMkxWw0RXJ5QVu6I2j16zgYB8xdxyIyG3Ng==
-  dependencies:
+    "@sentry/integrations" "^6.9.0"
     animate.css "^4.0.0"
+    axios "^0.19.0"
     bulma "^0.9.0"
-    vue "^2.5.16"
+    flag-icon-css "^3.0.0"
+    laravel-echo "^1.5.3"
+    lodash "^4.17.11"
+    pusher-js "^7.0.0"
+    v-tooltip "4.0.0-alpha.1"
+    vue "^3.0"
+    vue-pull-refresh "^0.2.7"
+    vue-router "^4.0.0"
+    vuedraggable "^2.16.0"
+    vuex "^4.0.0"
 
-"@enso-ui/transitions@^1.0":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@enso-ui/transitions/-/transitions-1.1.1.tgz#8cc1b683fae871b71c77bafb84b254d1df07cd4f"
-  integrity sha512-LjqOSClSLH2CHzCxwjjIFvZydAaH6VWAb6btGRjkZVi0W9k037jBbGP1sEtT4/hdTF8QqWQU3Yxf4MUCkrT5Tw==
+"@enso-ui/uploader@^2.0":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@enso-ui/uploader/-/uploader-2.0.4.tgz#89bcae3f5ab67c7bf279b6606d2ab4a0db781f47"
+  integrity sha512-LFMTCzOBWQ4NeomkXKJATsrpMysCN8RHf6K75cuypM9+hF5+lyalZ1OnieG9EXV99rxqZdMgq7xc1s8/rSsf7A==
   dependencies:
-    animate.css "^4.0.0"
-    vue "^2.5.16"
-
-"@enso-ui/wysiwyg@^1.0":
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/@enso-ui/wysiwyg/-/wysiwyg-1.0.11.tgz#6ab0087d7e9853bb569dc045b261b5c29b5ce6a3"
-  integrity sha512-SDn3wx1XZgi/voLMzKsi4kem8O0ZPH6ClJg5lyUpsMylde/OLlXvlonS0EuCHzAz4eCj6anfkDtqJ9rF4flS4A==
-  dependencies:
-    "@fortawesome/fontawesome-free" "^5.2.0"
     "@fortawesome/fontawesome-svg-core" "^1.2.2"
     "@fortawesome/free-solid-svg-icons" "^5.2.0"
-    "@fortawesome/vue-fontawesome" "^0.1.1"
-    "@tinymce/tinymce-vue" "^3.0.1"
-    vue "^2.6.8"
+    "@fortawesome/vue-fontawesome" "3.0.0-5"
+    bulma "^0.9.0"
+    vue "^3.0"
+
+"@enso-ui/user-groups@^2.0":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@enso-ui/user-groups/-/user-groups-2.0.5.tgz#c77d82f7e7d2f33babaa36af289fa1bd0a4158f0"
+  integrity sha512-jPhWedzxBxRwdsr6YEz5/+4dVopJfSZuocgwXZecpVqLiYV+N0OwxkhoHE0w7f+jdJXY1a5QBKzvQ+t97Yhupw==
+  dependencies:
+    "@enso-ui/forms" "^3.0"
+    "@enso-ui/tables" "^3.0"
+    "@enso-ui/ui" "^5.0"
+    "@fortawesome/fontawesome-svg-core" "^1.2.2"
+    "@fortawesome/free-solid-svg-icons" "^5.2.0"
+    vue "^3.0"
+
+"@enso-ui/users@^2.0":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@enso-ui/users/-/users-2.0.5.tgz#52a6e2241ac90a904e98344709df1095b13c8a6f"
+  integrity sha512-Wg55nw9aQVAe9Bq+wqOzj7QiDLaIWVAtwH1FQVxfFwfJA2KUsGST00MgLHZk5fFwlwU8Q5u0GvcSKcXE+Pm1WQ==
+  dependencies:
+    "@enso-ui/accessories" "^4.0"
+    "@enso-ui/auth" "^2.0"
+    "@enso-ui/confirmation" "^2.0"
+    "@enso-ui/directives" "^2.0"
+    "@enso-ui/divider" "^2.0"
+    "@enso-ui/files" "^4.0"
+    "@enso-ui/forms" "^3.0"
+    "@enso-ui/modal" "^3.0"
+    "@enso-ui/tables" "^3.0"
+    "@enso-ui/tabs" "^2.0"
+    "@enso-ui/ui" "^5.0"
+    "@enso-ui/uploader" "^2.0"
+    "@fortawesome/fontawesome-svg-core" "^1.2.2"
+    "@fortawesome/free-solid-svg-icons" "^5.2.0"
+    "@fortawesome/vue-fontawesome" "3.0.0-5"
+    v-tooltip "4.0.0-alpha.1"
+    vue "^3.0"
+    vuex "^4.0.0"
+
+"@enso-ui/wysiwyg@^2.0":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@enso-ui/wysiwyg/-/wysiwyg-2.0.4.tgz#10cd8c732cb67fcf7325fd7c7ce75ede0c121576"
+  integrity sha512-AIZCDfg6DROjXFwVM1TS4NvsGx5F6UExE+hNls171O63Z08HdjZ0WmmcBxlYRPdx/yOvHsr/zIqxVSURB8u8sQ==
+  dependencies:
+    "@tinymce/tinymce-vue" "^4.0.0"
+    vue "^3.0"
 
 "@eslint/eslintrc@^0.4.3":
   version "0.4.3"
@@ -1168,7 +1672,7 @@
   resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.15.4.tgz#ecda5712b61ac852c760d8b3c79c96adca5554e5"
   integrity sha512-eYm8vijH/hpzr/6/1CJ/V/Eb1xQFW2nnUKArb3z+yUWv7HTwj6M7SP957oMjfZjAHU6qpoNc2wQvIxBLWYa/Jg==
 
-"@fortawesome/fontawesome-svg-core@^1.2.2":
+"@fortawesome/fontawesome-svg-core@^1.2.2", "@fortawesome/fontawesome-svg-core@^1.2.25":
   version "1.2.36"
   resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-1.2.36.tgz#4f2ea6f778298e0c47c6524ce2e7fd58eb6930e3"
   integrity sha512-YUcsLQKYb6DmaJjIHdDWpBIGCcyE/W+p/LMGvjQem55Mm2XWVAP5kWTMKWLv9lwpCVjpLxPyOMOyUocP1GxrtA==
@@ -1189,17 +1693,17 @@
   dependencies:
     "@fortawesome/fontawesome-common-types" "^0.2.36"
 
-"@fortawesome/free-solid-svg-icons@^5.2.0":
+"@fortawesome/free-solid-svg-icons@^5.11.2", "@fortawesome/free-solid-svg-icons@^5.2.0":
   version "5.15.4"
   resolved "https://registry.yarnpkg.com/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-5.15.4.tgz#2a68f3fc3ddda12e52645654142b9e4e8fbb6cc5"
   integrity sha512-JLmQfz6tdtwxoihXLg6lT78BorrFyCf59SAwBM6qV/0zXyVeDygJVb3fk+j5Qat+Yvcxp1buLTY5iDh1ZSAQ8w==
   dependencies:
     "@fortawesome/fontawesome-common-types" "^0.2.36"
 
-"@fortawesome/vue-fontawesome@^0.1.1":
-  version "0.1.10"
-  resolved "https://registry.yarnpkg.com/@fortawesome/vue-fontawesome/-/vue-fontawesome-0.1.10.tgz#eeeec1e4e8850bed0468f938292b06cda793bf34"
-  integrity sha512-b2+SLF31h32LSepVcXe+BQ63yvbq5qmTCy4KfFogCYm2bn68H5sDWUnX+U7MBqnM2aeEk9M7xSoqGnu+wSdY6w==
+"@fortawesome/vue-fontawesome@3.0.0-5":
+  version "3.0.0-5"
+  resolved "https://registry.yarnpkg.com/@fortawesome/vue-fontawesome/-/vue-fontawesome-3.0.0-5.tgz#6251e6917198362fa56510eb256cfb6aa6d30a32"
+  integrity sha512-aNmBT4bOecrFsZTog1l6AJDQHPP3ocXV+WQ3Ogy8WZCqstB/ahfhH4CPu5i4N9Hw0MBKXqE+LX+NbUxcj8cVTw==
 
 "@hapi/hoek@^9.0.0":
   version "9.2.1"
@@ -1283,6 +1787,16 @@
     "@sentry/utils" "6.14.1"
     tslib "^1.9.3"
 
+"@sentry/integrations@^6.9.0":
+  version "6.15.0"
+  resolved "https://registry.yarnpkg.com/@sentry/integrations/-/integrations-6.15.0.tgz#3c83617c301b5f77a57514ad7812aedc03613a31"
+  integrity sha512-fSBAipas6zwyYo4U91pyQOnaTcRCfwvH6ZFwu0Fqmkm64nU9rYpbTNiKkwOWbbiXXT6+LEF6RzBpsyhm4QvgmQ==
+  dependencies:
+    "@sentry/types" "6.15.0"
+    "@sentry/utils" "6.15.0"
+    localforage "^1.8.1"
+    tslib "^1.9.3"
+
 "@sentry/minimal@6.14.1":
   version "6.14.1"
   resolved "https://registry.yarnpkg.com/@sentry/minimal/-/minimal-6.14.1.tgz#6fbce5b873fb096411dbb9a01ff6706ed684f2e8"
@@ -1297,12 +1811,25 @@
   resolved "https://registry.yarnpkg.com/@sentry/types/-/types-6.14.1.tgz#0d562a7aa91253b7843723344b4ba03a010e6376"
   integrity sha512-RIk3ZwQKZnASrYWfV5i4wbzVveHz8xLFAS2ySIMqh+hICKnB0N4/r8a1Of/84j7pj+iAbf5vPS85639eIf+9qg==
 
+"@sentry/types@6.15.0":
+  version "6.15.0"
+  resolved "https://registry.yarnpkg.com/@sentry/types/-/types-6.15.0.tgz#a2917f8aed91471bdfd6651384ffcd47b95c43ad"
+  integrity sha512-zBw5gPUsofXUSpS3ZAXqRNedLRBvirl3sqkj2Lez7X2EkKRgn5D8m9fQIrig/X3TsKcXUpijDW5Buk5zeCVzJA==
+
 "@sentry/utils@6.14.1":
   version "6.14.1"
   resolved "https://registry.yarnpkg.com/@sentry/utils/-/utils-6.14.1.tgz#cb746858665314c07cfe9b0f307b410e377032ad"
   integrity sha512-GVvf0z18L4DN0a6vIBdHSlrK/Dj8QFhuiiJ8NtccSoY8xiKXQNz9FKN5d52NUNqm59aopAxcVAcs57yQSdxrZQ==
   dependencies:
     "@sentry/types" "6.14.1"
+    tslib "^1.9.3"
+
+"@sentry/utils@6.15.0":
+  version "6.15.0"
+  resolved "https://registry.yarnpkg.com/@sentry/utils/-/utils-6.15.0.tgz#0c247cb092b1796d39c3d16d8e6977b9cdab9ca2"
+  integrity sha512-gnhKKyFtnNmKWjDizo7VKD0/Vx8cgW1lCusM6WI7jy2jlO3bQA0+Dzgmr4mIReZ74mq4VpOd2Vfrx7ZldW1DMw==
+  dependencies:
+    "@sentry/types" "6.15.0"
     tslib "^1.9.3"
 
 "@sideway/address@^4.1.0":
@@ -1322,10 +1849,10 @@
   resolved "https://registry.yarnpkg.com/@sideway/pinpoint/-/pinpoint-2.0.0.tgz#cff8ffadc372ad29fd3f78277aeb29e632cc70df"
   integrity sha512-RNiOoTPkptFtSVzQevY/yWtZwf/RxyVnPy/OcA9HBM3MlGDnBEYL5B41H0MTn0Uec8Hi+2qUtTfG2WWZBmMejQ==
 
-"@tinymce/tinymce-vue@^3.0.1":
-  version "3.2.8"
-  resolved "https://registry.yarnpkg.com/@tinymce/tinymce-vue/-/tinymce-vue-3.2.8.tgz#014571b52ec8fa83665a7fa887bf65140207de71"
-  integrity sha512-jEz+NZ0g+FZFz273OEUWz9QkwPMyjc5AJYyxOgu51O1Y5UaJ/6IUddXTX6A20mwCleEv5ebwNYdalviafx4fnA==
+"@tinymce/tinymce-vue@^4.0.0":
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/@tinymce/tinymce-vue/-/tinymce-vue-4.0.4.tgz#b47934f2d1e106ac9af7fa9ba0316a8c96ed314c"
+  integrity sha512-nLd96QK8P53dCm+oF6j2D5AXoZ9MCZyjybt7B98wXo2csfKd2Ozbjv9dlnRKCdEe/JZBG4KbwBEjXlwsaAGEvg==
 
 "@types/eslint-scope@^3.7.0":
   version "3.7.1"
@@ -1574,7 +2101,7 @@
     "@vue/compiler-dom" "3.2.21"
     "@vue/shared" "3.2.21"
 
-"@vue/devtools-api@^6.0.0-beta.11":
+"@vue/devtools-api@^6.0.0-beta.11", "@vue/devtools-api@^6.0.0-beta.18":
   version "6.0.0-beta.20.1"
   resolved "https://registry.yarnpkg.com/@vue/devtools-api/-/devtools-api-6.0.0-beta.20.1.tgz#5b499647e929c35baf2a66a399578f9aa4601142"
   integrity sha512-R2rfiRY+kZugzWh9ZyITaovx+jpU4vgivAEAiz80kvh3yviiTU3CBuGuyWpSwGz9/C7TkSWVM/FtQRGlZ16n8Q==
@@ -1917,6 +2444,13 @@ autoprefixer@^9.6.1:
     postcss "^7.0.32"
     postcss-value-parser "^4.1.0"
 
+axios@^0.19.0:
+  version "0.19.2"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.19.2.tgz#3ea36c5d8818d0d5f8a8a97a6d36b86cdc00cb27"
+  integrity sha512-fjgm5MvRHLhx+osE2xoekY70AhARk3a6hkN+3Io1jc00jtquGvxYlKlsFUhmUET0V5te6CcZI7lcv2Ym61mjHA==
+  dependencies:
+    follow-redirects "1.5.10"
+
 babel-eslint@^10.0.1:
   version "10.1.0"
   resolved "https://registry.yarnpkg.com/babel-eslint/-/babel-eslint-10.1.0.tgz#6968e568a910b78fb3779cdd8b6ac2f479943232"
@@ -2033,6 +2567,11 @@ buffer@^5.5.0:
     base64-js "^1.3.1"
     ieee754 "^1.1.13"
 
+bulma-extensions@^6.0.0:
+  version "6.2.7"
+  resolved "https://registry.yarnpkg.com/bulma-extensions/-/bulma-extensions-6.2.7.tgz#f9f4d1478a7ac1606ae8db1e765aa45e3f12bb31"
+  integrity sha512-y3dHsxlCYkuxUg87KKN9H4InM8NCk8tdnrlxLkYak8sd2WQdllg3wP2Nv41lj8X46uPXX2ADP0MO65LlXPHt/Q==
+
 bulma@^0.9.0:
   version "0.9.3"
   resolved "https://registry.yarnpkg.com/bulma/-/bulma-0.9.3.tgz#ddccb7436ebe3e21bf47afe01d3c43a296b70243"
@@ -2087,6 +2626,21 @@ chardet@^0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/chardet/-/chardet-0.7.0.tgz#90094849f0937f2eedc2425d0d28a9e5f0cbad9e"
   integrity sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==
+
+chart.js@^3.0.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/chart.js/-/chart.js-3.6.0.tgz#a87fce8431d4e7c5523d721f487f53aada1e42fe"
+  integrity sha512-iOzzDKePL+bj+ccIsVAgWQehCXv8xOKGbaU2fO/myivH736zcx535PGJzQGanvcSGVOqX6yuLZsN3ygcQ35UgQ==
+
+chartjs-plugin-annotation@^1.0.2:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/chartjs-plugin-annotation/-/chartjs-plugin-annotation-1.1.0.tgz#76b76123d5167c0480817770e337d0a08784ee1c"
+  integrity sha512-I5xB26OarX5OD76jELYMpzh4MSdvL1aswmsbRm2EGABwEdFSdJpQjkr54zB5bXYpVcEqAHF3dZnqB+Akp61x5w==
+
+chartjs-plugin-datalabels@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/chartjs-plugin-datalabels/-/chartjs-plugin-datalabels-2.0.0.tgz#caacefb26803d968785071eab012dde8746c5939"
+  integrity sha512-WBsWihphzM0Y8fmQVm89+iy99mmgejmj5/jcsYqwxSioLRL/zqJ4Scv/eXq5ZqvG3TpojlGzZLeaOaSvDm7fwA==
 
 chrome-trace-event@^1.0.2:
   version "1.0.3"
@@ -2220,10 +2774,27 @@ cross-spawn@^7.0.0, cross-spawn@^7.0.2:
     shebang-command "^2.0.0"
     which "^2.0.1"
 
+css-element-queries@^1.1.1:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/css-element-queries/-/css-element-queries-1.2.3.tgz#e14940b1fcd4bf0da60ea4145d05742d7172e516"
+  integrity sha512-QK9uovYmKTsV2GXWQiMOByVNrLn2qz6m3P7vWpOR4IdD6I3iXoDw5qtgJEN3Xq7gIbdHVKvzHjdAtcl+4Arc4Q==
+
 csstype@^2.6.8:
   version "2.6.18"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.18.tgz#980a8b53085f34af313410af064f2bd241784218"
   integrity sha512-RSU6Hyeg14am3Ah4VZEmeX8H7kLwEEirXe6aU2IPfKNvhXwTflK5HQRDNI0ypQXoqmm+QPyG2IaPuQE5zMwSIQ==
+
+date-fns@^2.0.0:
+  version "2.25.0"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.25.0.tgz#8c5c8f1d958be3809a9a03f4b742eba894fc5680"
+  integrity sha512-ovYRFnTrbGPD4nqaEqescPEv1mNwvt+UTqI3Ay9SzNtey9NZnYu6E2qCcBBgJ6/2VF1zGGygpyTDITqpQQ5e+w==
+
+debug@=3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
+  integrity sha512-OX8XqP7/1a9cqkxYw2yXss15f26NKWBpDXQd0/uK/KPqdQhxbPa994hnzjcE2VqQpDslf55723cKPUOGSmMY3g==
+  dependencies:
+    ms "2.0.0"
 
 debug@^2.6.9:
   version "2.6.9"
@@ -2290,11 +2861,6 @@ doctrine@^3.0.0:
   integrity sha512-yS+Q5i3hBf7GBkd4KG8a7eBNNWNGLTaEwwYWUijIYM7zrlYDM0BFXHjjPWlWZ1Rg7UaddZeIDmi9jF3HmqiQ2w==
   dependencies:
     esutils "^2.0.2"
-
-dropzone@^5.5.1:
-  version "5.9.3"
-  resolved "https://registry.yarnpkg.com/dropzone/-/dropzone-5.9.3.tgz#b3070ae090fa48cbc04c17535635537ca72d70d6"
-  integrity sha512-Azk8kD/2/nJIuVPK+zQ9sjKMRIpRvNyqn9XwbBHNq+iNuSccbJS6hwm1Woy0pMST0erSo0u4j+KJaodndDk4vA==
 
 easy-stack@^1.0.1:
   version "1.0.1"
@@ -2476,7 +3042,7 @@ eslint-plugin-import@^2.21.2:
     resolve "^1.20.0"
     tsconfig-paths "^3.11.0"
 
-eslint-plugin-vue@^8.0.0:
+eslint-plugin-vue@^8.0.3:
   version "8.0.3"
   resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-8.0.3.tgz#791cc4543940319e612ea61a1d779e8c87cf749a"
   integrity sha512-Rlhhy5ltzde0sRwSkqHuNePTXLMMaJ5+qsQubM4RYloYsQ8cXlnJT5MDaCzSirkGADipOHtmQXIbbPFAzUrADg==
@@ -2542,7 +3108,7 @@ eslint-webpack-plugin@2.4.3:
     micromatch "^4.0.2"
     schema-utils "^3.0.0"
 
-eslint@^7.0:
+eslint@^7.0.0:
   version "7.32.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-7.32.0.tgz#c6d328a14be3fb08c8d1d21e12c02fdb7a2a812d"
   integrity sha512-VHZ8gX+EDfz+97jGcgyGCyRia/dPOd6Xh9yPv8Bl1+SoaIwD+a/vlrOmGRUyOYu7MwUhc7CxqeaDZU13S4+EpA==
@@ -2723,6 +3289,11 @@ fastq@^1.6.0:
   dependencies:
     reusify "^1.0.4"
 
+favico.js@^0.3.10:
+  version "0.3.10"
+  resolved "https://registry.yarnpkg.com/favico.js/-/favico.js-0.3.10.tgz#80586e27a117f24a8d51c18a99bdc714d4339301"
+  integrity sha1-gFhuJ6EX8kqNUcGKmb3HFNQzkwE=
+
 figures@^3.0.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/figures/-/figures-3.2.0.tgz#625c18bd293c604dc4a8ddb2febf0c88341746af"
@@ -2736,6 +3307,11 @@ file-entry-cache@^6.0.1:
   integrity sha512-7Gps/XWymbLk2QLYK4NzpMOrYjMhdIxXuIvy2QBsLE6ljuodKvdkWs/cpyJJ3CVIVpH0Oi1Hvg1ovbMzLdFBBg==
   dependencies:
     flat-cache "^3.0.4"
+
+file-saver@^2.0:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/file-saver/-/file-saver-2.0.5.tgz#d61cfe2ce059f414d899e9dd6d4107ee25670c38"
+  integrity sha512-P9bmyZ3h/PRG+Nzga+rbdI4OEpNDzAVyy74uVO9ATgzLK6VtAsYybF/+TOCvrc0MO793d6+42lLyZTw7/ArVzA==
 
 fill-range@^7.0.1:
   version "7.0.1"
@@ -2773,6 +3349,11 @@ find-up@^4.0.0:
     locate-path "^5.0.0"
     path-exists "^4.0.0"
 
+flag-icon-css@^3.0.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/flag-icon-css/-/flag-icon-css-3.5.0.tgz#430747d5cb91e60babf85494de99173c16dc7cf2"
+  integrity sha512-pgJnJLrtb0tcDgU1fzGaQXmR8h++nXvILJ+r5SmOXaaL/2pocunQo2a8TAXhjQnBpRLPtZ1KCz/TYpqeNuE2ew==
+
 flat-cache@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/flat-cache/-/flat-cache-3.0.4.tgz#61b0338302b2fe9f957dcc32fc2a87f1c3048b11"
@@ -2790,6 +3371,13 @@ flatted@^3.1.0:
   version "3.2.4"
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.2.4.tgz#28d9969ea90661b5134259f312ab6aa7929ac5e2"
   integrity sha512-8/sOawo8tJ4QOBX8YlQBMxL8+RLZfxMQOif9o0KUKTNTjMYElWPE0r/m5VNFxTRd0NSw8qSy8dajrwX4RYI1Hw==
+
+follow-redirects@1.5.10:
+  version "1.5.10"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.10.tgz#7b7a9f9aea2fdff36786a94ff643ed07f4ff5e2a"
+  integrity sha512-0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ==
+  dependencies:
+    debug "=3.1.0"
 
 fs.realpath@^1.0.0:
   version "1.0.0"
@@ -2893,6 +3481,11 @@ graceful-fs@^4.1.2, graceful-fs@^4.2.4:
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.8.tgz#e412b8d33f5e006593cbd3cee6df9f2cebbe802a"
   integrity sha512-qkIilPUYcNhJpd33n0GBXTB1MMPp14TxEsEs0pTrsSVucApsYzW5V+Q8Qxhik6KU3evy+qkAAowTByymK0avdg==
 
+gsap@^3.8:
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.8.0.tgz#a404dd6ebbaabc92605539aea9d98e3098688064"
+  integrity sha512-cvpzKkWFePDZCycwXwJnDSpTR3j+a4QLQF/t0c+pXqzRESgAYx5hieaoshzZFjbwsARqr0+5c3GKE7wI273w/g==
+
 has-bigints@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/has-bigints/-/has-bigints-1.0.1.tgz#64fe6acb020673e3b78db035a5af69aa9d07b113"
@@ -2927,10 +3520,10 @@ has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
-highlight.js@^9.12.0:
-  version "9.18.5"
-  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.18.5.tgz#d18a359867f378c138d6819edfc2a8acd5f29825"
-  integrity sha512-a5bFyofd/BHCX52/8i8uJkjr9DYwXIPnM/plwI6W7ezItLGqzt7X2G2nXuYSfsIJdkwwj/g9DG1LkcGJI/dDoA==
+highlight.js@^11.0:
+  version "11.3.1"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-11.3.1.tgz#813078ef3aa519c61700f84fe9047231c5dc3291"
+  integrity sha512-PUhCRnPjLtiLHZAQ5A/Dt5F8cWZeMyj9KRsACsWT+OD6OP0x6dp5OmT5jdx0JgEyPxPZZIPQpRN2TciUT7occw==
 
 hosted-git-info@^2.1.4:
   version "2.8.9"
@@ -2968,6 +3561,11 @@ ignore@^5.1.4:
   version "5.1.9"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-5.1.9.tgz#9ec1a5cbe8e1446ec60d4420060d43aa6e7382fb"
   integrity sha512-2zeMQpbKz5dhZ9IwL0gbxSW5w0NK/MSAMtNuhgIHEPmaU3vPdKPL0UdvUCXs5SS4JAwsBxysK5sFMW8ocFiVjQ==
+
+immediate@~3.0.5:
+  version "3.0.6"
+  resolved "https://registry.yarnpkg.com/immediate/-/immediate-3.0.6.tgz#9db1dbd0faf8de6fbe0f5dd5e56bb606280de69b"
+  integrity sha1-nbHb0Pr43m++D13V5Wu2BigN5ps=
 
 import-fresh@^3.0.0, import-fresh@^3.2.1:
   version "3.3.0"
@@ -3278,6 +3876,11 @@ json5@^2.1.2:
   dependencies:
     minimist "^1.2.5"
 
+laravel-echo@^1.5.3:
+  version "1.11.3"
+  resolved "https://registry.yarnpkg.com/laravel-echo/-/laravel-echo-1.11.3.tgz#f596f05cb1d83728c955ba762223e5e280a3ebd7"
+  integrity sha512-VNTnnoF8gK29ovxslnrFDt3xgrKiKKW1kTnKKO1A4kYVj4UCKmNO4x2ehRlfg2UTrG/oggwk95p+S9ftQYjXdw==
+
 launch-editor@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/launch-editor/-/launch-editor-2.2.1.tgz#871b5a3ee39d6680fcc26d37930b6eeda89db0ca"
@@ -3293,6 +3896,13 @@ levn@^0.4.1:
   dependencies:
     prelude-ls "^1.2.1"
     type-check "~0.4.0"
+
+lie@3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/lie/-/lie-3.1.1.tgz#9a436b2cc7746ca59de7a41fa469b3efb76bd87e"
+  integrity sha1-mkNrLMd0bKWd56QfpGmz77dr2H4=
+  dependencies:
+    immediate "~3.0.5"
 
 lines-and-columns@^1.1.6:
   version "1.1.6"
@@ -3321,6 +3931,13 @@ loader-utils@^2.0.0:
     big.js "^5.2.2"
     emojis-list "^3.0.0"
     json5 "^2.1.2"
+
+localforage@^1.8.1:
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/localforage/-/localforage-1.10.0.tgz#5c465dc5f62b2807c3a84c0c6a1b1b3212781dd4"
+  integrity sha512-14/H1aX7hzBBmmh7sGPd+AOMkkIrHM3Z1PAyGgZigA1H1p5O5ANnMyWzvpAETtG68/dC4pC0ncy3+PPGzXZHPg==
+  dependencies:
+    lie "3.1.1"
 
 locate-path@^2.0.0:
   version "2.0.0"
@@ -3357,7 +3974,7 @@ lodash.truncate@^4.4.2:
   resolved "https://registry.yarnpkg.com/lodash.truncate/-/lodash.truncate-4.4.2.tgz#5a350da0b1113b837ecfffd5812cbe58d6eae193"
   integrity sha1-WjUNoLERO4N+z//VgSy+WNbq4ZM=
 
-lodash@^4.17.10, lodash@^4.17.21:
+lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.20, lodash@^4.17.21:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -3766,11 +4383,6 @@ pkg-dir@^4.1.0:
   dependencies:
     find-up "^4.0.0"
 
-popper.js@^1.16.1:
-  version "1.16.1"
-  resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.16.1.tgz#2a223cb3dc7b6213d740e40372be40de43e65b1b"
-  integrity sha512-Wb4p1J4zyFTbM+u6WuO4XstYx4Ky9Cewe4DWrel7B0w6VVICvPwdOpotjzcf6eD8TsckVnIMNONQyPIUFOUbCQ==
-
 postcss-value-parser@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-4.1.0.tgz#443f6a20ced6481a2bda4fa8532a6e55d789a2cb"
@@ -3820,6 +4432,13 @@ punycode@^2.1.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
+
+pusher-js@^7.0.0:
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/pusher-js/-/pusher-js-7.0.3.tgz#f81c78cdf2ad32f546caa7532ec7f9081ef00b8d"
+  integrity sha512-HIfCvt00CAqgO4W0BrdpPsDcAwy51rB6DN0VMC+JeVRRbo8mn3XTeUeIFjmmlRLZLX8rPhUtLRo7vPag6b8GCw==
+  dependencies:
+    tweetnacl "^1.0.3"
 
 queue-microtask@^1.2.2:
   version "1.2.3"
@@ -4081,6 +4700,11 @@ slice-ansi@^4.0.0:
     astral-regex "^2.0.0"
     is-fullwidth-code-point "^3.0.0"
 
+sortablejs@1.10.2:
+  version "1.10.2"
+  resolved "https://registry.yarnpkg.com/sortablejs/-/sortablejs-1.10.2.tgz#6e40364d913f98b85a14f6678f92b5c1221f5290"
+  integrity sha512-YkPGufevysvfwn5rfdlGyrGjt7/CRHwvRPogD/lC+TnvcN29jDpCifKP+rBqf+LRldfXSTh+0CGLcSg0VIxq3A==
+
 source-map-js@^0.6.2:
   version "0.6.2"
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-0.6.2.tgz#0bb5de631b41cfbda6cfba8bd05a80efdfd2385e"
@@ -4336,6 +4960,11 @@ tslib@~2.1.0:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.1.0.tgz#da60860f1c2ecaa5703ab7d39bc05b6bf988b97a"
   integrity sha512-hcVC3wYEziELGGmEEXue7D75zbwIIVUMWAVbHItGPx0ziyXxrOMQx4rQEVEV45Ut/1IotuEvwqPopzIOkDMf0A==
 
+tweetnacl@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-1.0.3.tgz#ac0af71680458d8a6378d0d0d050ab1407d35596"
+  integrity sha512-6rt+RN7aOi1nGMyC4Xa5DdYiukl2UWCbcJft7YhxReBGQD7OAM8Pbxw6YMo4r2diNEA8FEmu32YOn9rhaiE5yw==
+
 type-check@^0.4.0, type-check@~0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/type-check/-/type-check-0.4.0.tgz#07b8203bfa7056c0657050e3ccd2c37730bab8f1"
@@ -4411,16 +5040,6 @@ v-tooltip@4.0.0-alpha.1:
     "@popperjs/core" "^2.6.0"
     vue-resize "^2.0.0-alpha.1"
 
-v-tooltip@^2.0.0, v-tooltip@^2.0.0-rc.33:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/v-tooltip/-/v-tooltip-2.1.3.tgz#281c2015d1e73787f13c8956aa295b8c3a73f261"
-  integrity sha512-xXngyxLQTOx/yUEy50thb8te7Qo4XU6h4LZB6cvEfVd9mnysUxLEoYwGWDdqR+l69liKsy3IPkdYff3J1gAJ5w==
-  dependencies:
-    "@babel/runtime" "^7.13.10"
-    lodash "^4.17.21"
-    popper.js "^1.16.1"
-    vue-resize "^1.0.1"
-
 v8-compile-cache@^2.0.3:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/v8-compile-cache/-/v8-compile-cache-2.3.0.tgz#2de19618c66dc247dcfb6f99338035d8245a2cee"
@@ -4447,24 +5066,26 @@ vue-eslint-parser@^8.0.1:
     lodash "^4.17.21"
     semver "^7.3.5"
 
-vue-resize@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/vue-resize/-/vue-resize-1.0.1.tgz#c120bed4e09938771d622614f57dbcf58a5147ee"
-  integrity sha512-z5M7lJs0QluJnaoMFTIeGx6dIkYxOwHThlZDeQnWZBizKblb99GSejPnK37ZbNE/rVwDcYcHY+Io+AxdpY952w==
+vue-pull-refresh@^0.2.7:
+  version "0.2.7"
+  resolved "https://registry.yarnpkg.com/vue-pull-refresh/-/vue-pull-refresh-0.2.7.tgz#ee4025fed2c2ff32390153a0ae2fcb86d5eeded6"
+  integrity sha512-SN0DxNeKrcgduybhHrUgHPHiyjHlfLN29ycslfiV/NeQ5qgDaB3COl1m30cpcqQgk0+pKcCUsygdKrj3qB0AFw==
   dependencies:
-    "@babel/runtime" "^7.13.10"
+    vue "^2.0.1"
 
 vue-resize@^2.0.0-alpha.1:
   version "2.0.0-alpha.1"
   resolved "https://registry.yarnpkg.com/vue-resize/-/vue-resize-2.0.0-alpha.1.tgz#43eeb79e74febe932b9b20c5c57e0ebc14e2df3a"
   integrity sha512-7+iqOueLU7uc9NrMfrzbG8hwMqchfVfSzpVlCMeJQe4pyibqyoifDNbKTZvwxZKDvGkB+PdFeKvnGZMoEb8esg==
 
-vue-router@^3.0.1:
-  version "3.5.3"
-  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.5.3.tgz#041048053e336829d05dafacf6a8fb669a2e7999"
-  integrity sha512-FUlILrW3DGitS2h+Xaw8aRNvGTwtuaxrRkNSHWTizOfLUie7wuYwezeZ50iflRn8YPV5kxmU2LQuu3nM/b3Zsg==
+vue-router@^4.0, vue-router@^4.0.0:
+  version "4.0.12"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.0.12.tgz#8dc792cddf5bb1abcc3908f9064136de7e13c460"
+  integrity sha512-CPXvfqe+mZLB1kBWssssTiWg4EQERyqJZes7USiqfW9B5N2x+nHlnsM1D3b5CaJ6qgCvMmYJnz+G0iWjNCvXrg==
+  dependencies:
+    "@vue/devtools-api" "^6.0.0-beta.18"
 
-vue@^2.5.16, vue@^2.6.8:
+vue@^2.0.1:
   version "2.6.14"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.14.tgz#e51aa5250250d569a3fbad3a8a5a687d6036e235"
   integrity sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ==
@@ -4480,10 +5101,12 @@ vue@^3.0:
     "@vue/server-renderer" "3.2.21"
     "@vue/shared" "3.2.21"
 
-vuex@^3.0.0, vuex@^3.1.0:
-  version "3.6.2"
-  resolved "https://registry.yarnpkg.com/vuex/-/vuex-3.6.2.tgz#236bc086a870c3ae79946f107f16de59d5895e71"
-  integrity sha512-ETW44IqCgBpVomy520DT5jf8n0zoCac+sxWnn+hMe/CzaSejb/eVw2YToiXYX+Ex/AuHHia28vWTq4goAexFbw==
+vuedraggable@^2.16.0:
+  version "2.24.3"
+  resolved "https://registry.yarnpkg.com/vuedraggable/-/vuedraggable-2.24.3.tgz#43c93849b746a24ce503e123d5b259c701ba0d19"
+  integrity sha512-6/HDXi92GzB+Hcs9fC6PAAozK1RLt1ewPTLjK0anTYguXLAeySDmcnqE8IC0xa7shvSzRjQXq3/+dsZ7ETGF3g==
+  dependencies:
+    sortablejs "1.10.2"
 
 vuex@^4.0.0:
   version "4.0.2"
@@ -4609,3 +5232,8 @@ yorkie@^2.0.0:
     is-ci "^1.0.10"
     normalize-path "^1.0.0"
     strip-indent "^2.0.0"
+
+zxcvbn@^4.4.2:
+  version "4.4.2"
+  resolved "https://registry.yarnpkg.com/zxcvbn/-/zxcvbn-4.4.2.tgz#28ec17cf09743edcab056ddd8b1b06262cc73c30"
+  integrity sha1-KOwXzwl0PtyrBW3dixsGJizHPDA=
