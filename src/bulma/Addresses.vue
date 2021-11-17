@@ -65,6 +65,7 @@
 
 <script>
 import { faPlus, faSync, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon as Fa } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import AddressCard from './AddressCard.vue';
 import AddressForm from './AddressForm.vue';
@@ -74,7 +75,7 @@ library.add(faPlus, faSync, faSearch);
 export default {
     name: 'Addresses',
 
-    components: { AddressCard, AddressForm },
+    components: { Fa, AddressCard, AddressForm },
 
     inject: ['errorHandler', 'i18n', 'route'],
 

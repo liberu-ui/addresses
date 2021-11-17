@@ -25,10 +25,11 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import {
     Card, CardHeader, CardRefresh, CardCollapse, CardBadge, CardContent,
 } from '@enso-ui/card/bulma';
-import { mapState } from 'vuex';
+import { FontAwesomeIcon as Fa } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faMapSigns, faPlusSquare } from '@fortawesome/free-solid-svg-icons';
 import Addresses from './Addresses.vue';
@@ -39,7 +40,14 @@ export default {
     name: 'AddressesCard',
 
     components: {
-        Card, CardHeader, CardRefresh, CardCollapse, CardBadge, CardContent, Addresses,
+        Fa,
+        Card,
+        CardHeader,
+        CardRefresh,
+        CardCollapse,
+        CardBadge,
+        CardContent,
+        Addresses,
     },
 
     inject: ['i18n'],

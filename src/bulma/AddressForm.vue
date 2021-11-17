@@ -73,6 +73,7 @@
 </template>
 
 <script>
+import { FontAwesomeIcon as Fa } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faLocationArrow, faMapPin, faSearchLocation } from '@fortawesome/free-solid-svg-icons';
 import { Modal } from '@enso-ui/modal/bulma';
@@ -83,7 +84,9 @@ library.add(faLocationArrow, faMapPin, faSearchLocation);
 export default {
     name: 'AddressForm',
 
-    components: { Modal, EnsoForm, FormField },
+    components: {
+        Fa, Modal, EnsoForm, FormField,
+    },
 
     inject: ['canAccess', 'errorHandler', 'i18n', 'route'],
 
