@@ -129,6 +129,8 @@ export default {
         },
     },
 
+    emits: ['delete', 'edit', 'make-default', 'make-shipping', 'make-billing'],
+
     data: () => ({
         controls: false,
         confirmation: false,

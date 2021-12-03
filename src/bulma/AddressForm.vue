@@ -101,6 +101,8 @@ export default {
         },
     },
 
+    emits: ['form-loaded'],
+
     data: () => ({
         key: 1,
         form: null,

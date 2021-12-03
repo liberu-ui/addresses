@@ -94,6 +94,8 @@ export default {
         },
     },
 
+    emits: ['update'],
+
     data: () => ({
         loading: false,
         addresses: [],
