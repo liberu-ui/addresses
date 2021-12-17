@@ -1,5 +1,5 @@
 <template>
-    <modal portal="address-form">
+    <modal>
         <enso-form class="box has-background-light"
             v-bind="$attrs"
             :params="params"
