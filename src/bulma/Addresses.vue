@@ -58,7 +58,7 @@
             :id="id"
             :type="type"
             @close="path = null"
-            @submit="fetch(); path = null;"
+            @submitted="fetch(); path = null;"
             v-if="path"/>
     </div>
 </template>

@@ -22,7 +22,7 @@
             </template>
             <template #country_id="{ field }">
                 <form-field :field="field"
-                    @input="rerender"/>
+                    @update:modelValue="rerender"/>
             </template>
             <template #postcode="{ field, errors }">
                 <div class="is-fullwidth">
@@ -56,7 +56,7 @@
             </template>
             <template #region_id="{ field, errors }">
                 <form-field :field="field"
-                    @input="
+                    @update:modelValue="
                         localityParams.region_id = $event;
                         errors.clear(field.name);
                     "/>
@@ -64,7 +64,7 @@
             <template #locality_id="{ field, errors }">
                 <form-field :field="field"
                     :params="localityParams"
-                    @input="
+                    @update:modelValue="
                         errors.clear(field.name)
                     "/>
             </template>
