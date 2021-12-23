@@ -77,7 +77,7 @@ export default {
 
     components: { Fa, AddressCard, AddressForm },
 
-    inject: ['errorHandler', 'i18n', 'route'],
+    inject: ['errorHandler', 'i18n', 'http', 'route'],
 
     props: {
         id: {
@@ -140,7 +140,7 @@ export default {
         fetch() {
             this.loading = true;
 
-            axios.get(this.route('core.addresses.index'), { params: this.params })
+            this.http.get(this.route('core.addresses.index'), { params: this.params })
                 .then(({ data }) => {
                     this.addresses = data;
                     this.$emit('update');
@@ -157,14 +157,14 @@ export default {
             this.loading = true;
             const method = type.charAt(0).toUpperCase() + type.slice(1);
 
-            axios.patch(this.route(`core.addresses.make${method}`, address.id))
+            this.http.patch(this.route(`core.addresses.make${method}`, address.id))
                 .then(() => this.fetch())
                 .catch(this.errorHandler);
         },
         destroy(address, index) {
             this.loading = true;
 
-            axios.delete(this.route('core.addresses.destroy', address.id))
+            this.http.delete(this.route('core.addresses.destroy', address.id))
                 .then(() => {
                     this.addresses.splice(index, 1);
                     this.$emit('update');

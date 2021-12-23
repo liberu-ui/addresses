@@ -88,7 +88,7 @@ export default {
         Fa, Modal, EnsoForm, FormField,
     },
 
-    inject: ['canAccess', 'errorHandler', 'i18n', 'route'],
+    inject: ['canAccess', 'errorHandler', 'http', 'i18n', 'route'],
 
     props: {
         id: {
@@ -140,7 +140,7 @@ export default {
             this.loading = true;
             const address = this.form.routeParam('address');
 
-            axios.get(this.route('core.addresses.localize', address))
+            this.http.get(this.route('core.addresses.localize', address))
                 .then(({ data }) => {
                     const { lat, long } = data;
                     this.field('lat').value = lat;
@@ -170,7 +170,7 @@ export default {
                 },
             };
 
-            axios.get(this.route('core.addresses.postcode'), params)
+            this.http.get(this.route('core.addresses.postcode'), params)
                 .then(({ data: { postcode } }) => {
                     ['lat', 'long', 'city', 'region_id', 'locality_id', 'street']
                         .forEach(key => (this.field(key).value = postcode[key]
