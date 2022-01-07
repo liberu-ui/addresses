@@ -22,7 +22,7 @@
             </template>
             <template #country_id="{ field }">
                 <form-field :field="field"
-                    @update:modelValue="rerender"/>
+                    @update:model-value="rerender"/>
             </template>
             <template #postcode="{ field, errors }">
                 <div class="is-fullwidth">
@@ -56,7 +56,7 @@
             </template>
             <template #region_id="{ field, errors }">
                 <form-field :field="field"
-                    @update:modelValue="
+                    @update:model-value="
                         localityParams.region_id = $event;
                         errors.clear(field.name);
                     "/>
@@ -64,7 +64,7 @@
             <template #locality_id="{ field, errors }">
                 <form-field :field="field"
                     :params="localityParams"
-                    @update:modelValue="
+                    @update:model-value="
                         errors.clear(field.name)
                     "/>
             </template>
@@ -89,6 +89,8 @@ export default {
     },
 
     inject: ['canAccess', 'errorHandler', 'http', 'i18n', 'route'],
+
+    inheritAttrs: false,
 
     props: {
         id: {
