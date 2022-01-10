@@ -20,23 +20,23 @@
                     <span class="is-hidden-mobile"/>
                 </a>
             </template>
-            <template #country_id="{ field }">
-                <form-field :field="field"
+            <template #country_id="{ field: countryId }">
+                <form-field :field="countryId"
                     @update:model-value="rerender"/>
             </template>
-            <template #postcode="{ field, errors }">
+            <template #postcode="{ field: postcodeField, errors }">
                 <div class="is-fullwidth">
                     <label class="label">
-                        {{ i18n(field.label) }}
+                        {{ i18n(postcodeField.label) }}
                     </label>
                     <div class="field has-addons">
                         <div class="control is-expanded">
                             <input class="input"
-                                :class="['input', { 'is-danger': errors.has(field.name) }]"
+                                :class="['input', { 'is-danger': errors.has(postcodeField.name) }]"
                                 type="text"
-                                :placeholder="i18n(field.meta.placeholder)"
-                                v-model="field.value"
-                                @input="errors.clear(field.name)">
+                                :placeholder="i18n(postcodeField.meta.placeholder)"
+                                v-model="postcodeField.value"
+                                @input="errors.clear(postcodeField.name)">
                         </div>
                         <div class="control"
                             v-if="canAccess('core.addresses.postcode')">
@@ -49,23 +49,23 @@
                         </div>
                     </div>
                     <p class="help is-danger"
-                        v-if="errors.has(field.name)">
-                        {{ errors.get(field.name) }}
+                        v-if="errors.has(postcodeField.name)">
+                        {{ errors.get(postcodeField.name) }}
                     </p>
                 </div>
             </template>
-            <template #region_id="{ field, errors }">
-                <form-field :field="field"
+            <template #region_id="{ field: regionId, errors }">
+                <form-field :field="regionId"
                     @update:model-value="
                         localityParams.region_id = $event;
-                        errors.clear(field.name);
+                        errors.clear(regionId.name);
                     "/>
             </template>
-            <template #locality_id="{ field, errors }">
-                <form-field :field="field"
+            <template #locality_id="{ field: localityId, errors }">
+                <form-field :field="localityId"
                     :params="localityParams"
                     @update:model-value="
-                        errors.clear(field.name)
+                        errors.clear(localityId.name)
                     "/>
             </template>
         </enso-form>
