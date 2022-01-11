@@ -1,14 +1,12 @@
 <template>
-    <modal portal="address-form"
-        v-on="$listeners">
+    <modal>
         <enso-form class="box has-background-light"
             v-bind="$attrs"
             :params="params"
             :key="key"
-            v-on="$listeners"
             @ready="setFields"
             disable-state>
-            <template v-slot:actions-left
+            <template #actions-left
                 v-if="canLocalize">
                 <a class="button is-warning"
                    :class="{'loading': loading}"
@@ -22,23 +20,23 @@
                     <span class="is-hidden-mobile"/>
                 </a>
             </template>
-            <template v-slot:country_id="{ field }">
-                <form-field :field="field"
-                    @input="rerender"/>
+            <template #country_id="{ field: countryId }">
+                <form-field :field="countryId"
+                    @update:model-value="rerender"/>
             </template>
-            <template v-slot:postcode="{ field, errors }">
+            <template #postcode="{ field: postcodeField, errors }">
                 <div class="is-fullwidth">
                     <label class="label">
-                        {{ i18n(field.label) }}
+                        {{ i18n(postcodeField.label) }}
                     </label>
                     <div class="field has-addons">
                         <div class="control is-expanded">
                             <input class="input"
-                                :class="['input', { 'is-danger': errors.has(field.name) }]"
+                                :class="['input', { 'is-danger': errors.has(postcodeField.name) }]"
                                 type="text"
-                                :placeholder="i18n(field.meta.placeholder)"
-                                v-model="field.value"
-                                @input="errors.clear(field.name)">
+                                :placeholder="i18n(postcodeField.meta.placeholder)"
+                                v-model="postcodeField.value"
+                                @input="errors.clear(postcodeField.name)">
                         </div>
                         <div class="control"
                             v-if="canAccess('core.addresses.postcode')">
@@ -51,23 +49,23 @@
                         </div>
                     </div>
                     <p class="help is-danger"
-                        v-if="errors.has(field.name)">
-                        {{ errors.get(field.name) }}
+                        v-if="errors.has(postcodeField.name)">
+                        {{ errors.get(postcodeField.name) }}
                     </p>
                 </div>
             </template>
-            <template v-slot:region_id="{ field, errors }">
-                <form-field :field="field"
-                    @input="
+            <template #region_id="{ field: regionId, errors }">
+                <form-field :field="regionId"
+                    @update:model-value="
                         localityParams.region_id = $event;
-                        errors.clear(field.name);
+                        errors.clear(regionId.name);
                     "/>
             </template>
-            <template v-slot:locality_id="{ field, errors }">
-                <form-field :field="field"
+            <template #locality_id="{ field: localityId, errors }">
+                <form-field :field="localityId"
                     :params="localityParams"
-                    @input="
-                        errors.clear(field.name)
+                    @update:model-value="
+                        errors.clear(localityId.name)
                     "/>
             </template>
         </enso-form>
@@ -75,6 +73,7 @@
 </template>
 
 <script>
+import { FontAwesomeIcon as Fa } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faLocationArrow, faMapPin, faSearchLocation } from '@fortawesome/free-solid-svg-icons';
 import { Modal } from '@enso-ui/modal/bulma';
@@ -85,7 +84,13 @@ library.add(faLocationArrow, faMapPin, faSearchLocation);
 export default {
     name: 'AddressForm',
 
-    components: { Modal, EnsoForm, FormField },
+    components: {
+        Fa, Modal, EnsoForm, FormField,
+    },
+
+    inject: ['canAccess', 'errorHandler', 'http', 'i18n', 'route'],
+
+    inheritAttrs: false,
 
     props: {
         id: {
@@ -98,7 +103,7 @@ export default {
         },
     },
 
-    inject: ['canAccess', 'errorHandler', 'i18n', 'route'],
+    emits: ['form-loaded'],
 
     data: () => ({
         key: 1,
@@ -137,7 +142,7 @@ export default {
             this.loading = true;
             const address = this.form.routeParam('address');
 
-            axios.get(this.route('core.addresses.localize', address))
+            this.http.get(this.route('core.addresses.localize', address))
                 .then(({ data }) => {
                     const { lat, long } = data;
                     this.field('lat').value = lat;
@@ -160,18 +165,20 @@ export default {
             this.loading = true;
             this.postcode = null;
 
-            const params = { params: {
-                postcode: this.field('postcode').value,
-                country_id: this.field('country_id').value,
-            } };
+            const params = {
+                params: {
+                    postcode: this.field('postcode').value,
+                    country_id: this.field('country_id').value,
+                },
+            };
 
-            axios.get(this.route('core.addresses.postcode'), params)
+            this.http.get(this.route('core.addresses.postcode'), params)
                 .then(({ data: { postcode } }) => {
                     ['lat', 'long', 'city', 'region_id', 'locality_id', 'street']
                         .forEach(key => (this.field(key).value = postcode[key]
                         || this.field(key).value));
                     this.postcode = true;
-                }).catch((error) => {
+                }).catch(error => {
                     const { status, data } = error.response;
                     this.postcode = false;
 

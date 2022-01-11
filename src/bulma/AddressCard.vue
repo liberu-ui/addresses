@@ -98,7 +98,9 @@
 </template>
 
 <script>
+import 'v-tooltip/dist/v-tooltip.css';
 import { VTooltip } from 'v-tooltip';
+import { FontAwesomeIcon as Fa } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
     faPencilAlt, faAnchor, faGlobe, faStickyNote, faTrashAlt,
@@ -116,7 +118,7 @@ export default {
 
     directives: { tooltip: VTooltip },
 
-    components: { Confirmation },
+    components: { Fa, Confirmation },
 
     inject: ['i18n'],
 
@@ -126,6 +128,8 @@ export default {
             required: true,
         },
     },
+
+    emits: ['delete', 'edit', 'make-default', 'make-shipping', 'make-billing'],
 
     data: () => ({
         controls: false,

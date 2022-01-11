@@ -2,13 +2,13 @@
     <card collapsible
         :collapsed="collapsed">
         <card-header class="has-background-light">
-            <template v-slot:title>
+            <template #title>
                 <span class="icon is-small mr-1">
                     <fa :icon="icon"/>
                 </span>
                 {{ displayTitle }}
             </template>
-            <template v-slot:controls>
+            <template #controls>
                 <card-refresh @refresh="fetch"/>
                 <card-badge :label="count"/>
                 <card-collapse/>
@@ -25,10 +25,11 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import {
     Card, CardHeader, CardRefresh, CardCollapse, CardBadge, CardContent,
 } from '@enso-ui/card/bulma';
-import { mapState } from 'vuex';
+import { FontAwesomeIcon as Fa } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faMapSigns, faPlusSquare } from '@fortawesome/free-solid-svg-icons';
 import Addresses from './Addresses.vue';
@@ -39,7 +40,14 @@ export default {
     name: 'AddressesCard',
 
     components: {
-        Card, CardHeader, CardRefresh, CardCollapse, CardBadge, CardContent, Addresses,
+        Fa,
+        Card,
+        CardHeader,
+        CardRefresh,
+        CardCollapse,
+        CardBadge,
+        CardContent,
+        Addresses,
     },
 
     inject: ['i18n'],
