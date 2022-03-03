@@ -25,7 +25,7 @@
     "@enso-ui/card": "^3.0",
     "@enso-ui/confirmation": "^2.0",
     "@enso-ui/forms": "^3.0",
-    "@enso-ui/google": "^2.0",
+    "@enso-ui/google": "^3.0",
     "@enso-ui/modal": "^3.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.2",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
