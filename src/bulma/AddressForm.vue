@@ -1,82 +1,80 @@
 <template>
-    <modal>
-        <enso-form class="box has-background-light"
-            v-bind="$attrs"
-            :params="params"
-            :key="key"
-            @ready="setFields"
-            disable-state>
-            <template #actions-left
-                v-if="canLocalize">
-                <a class="button is-warning"
-                   :class="{'loading': loading}"
-                    @click="localize">
-                    <span class="is-hidden-mobile">
-                        {{ i18n('Localize') }}
-                    </span>
-                    <span class="icon">
-                        <fa icon="map-pin"/>
-                    </span>
-                    <span class="is-hidden-mobile"/>
-                </a>
-            </template>
-            <template #country_id="{ field: countryId }">
-                <form-field :field="countryId"
-                    @update:model-value="rerender"/>
-            </template>
-            <template #postcode="{ field: postcodeField, errors }">
-                <div class="is-fullwidth">
-                    <label class="label">
-                        {{ i18n(postcodeField.label) }}
-                    </label>
-                    <div class="field has-addons">
-                        <div class="control is-expanded">
-                            <input class="input"
-                                :class="['input', { 'is-danger': errors.has(postcodeField.name) }]"
-                                type="text"
-                                :placeholder="i18n(postcodeField.meta.placeholder)"
-                                v-model="postcodeField.value"
-                                @input="errors.clear(postcodeField.name)">
-                        </div>
-                        <div class="control"
-                            v-if="canAccess('core.addresses.postcode')">
-                            <a :class="['button', postcodeCss]"
-                                @click="loadAddress">
-                           <span class="icon">
-                                <fa icon="search-location"/>
-                           </span>
-                            </a>
-                        </div>
+    <enso-form class="box has-background-light"
+        v-bind="$attrs"
+        :params="params"
+        :key="key"
+        @ready="setFields"
+        disable-state>
+        <template #actions-left
+            v-if="canLocalize">
+            <a class="button is-warning"
+                :class="{'loading': loading}"
+                @click="localize">
+                <span class="is-hidden-mobile">
+                    {{ i18n('Localize') }}
+                </span>
+                <span class="icon">
+                    <fa icon="map-pin"/>
+                </span>
+                <span class="is-hidden-mobile"/>
+            </a>
+        </template>
+        <template #country_id="{ field: countryId }">
+            <form-field :field="countryId"
+                @update:model-value="rerender"/>
+        </template>
+        <template #postcode="{ field: postcodeField, errors }">
+            <div class="is-fullwidth">
+                <label class="label">
+                    {{ i18n(postcodeField.label) }}
+                </label>
+                <div class="field has-addons">
+                    <div class="control is-expanded">
+                        <input class="input"
+                            :class="['input', { 'is-danger': errors.has(postcodeField.name) }]"
+                            type="text"
+                            :placeholder="i18n(postcodeField.meta.placeholder)"
+                            v-model="postcodeField.value"
+                            @input="errors.clear(postcodeField.name)">
                     </div>
-                    <p class="help is-danger"
-                        v-if="errors.has(postcodeField.name)">
-                        {{ errors.get(postcodeField.name) }}
-                    </p>
+                    <div class="control"
+                        v-if="canAccess('core.addresses.postcode')">
+                        <a :class="['button', postcodeCss]"
+                            @click="loadAddress">
+                        <span class="icon">
+                            <fa icon="search-location"/>
+                        </span>
+                        </a>
+                    </div>
                 </div>
-            </template>
-            <template #region_id="{ field: regionId, errors }">
-                <form-field :field="regionId"
-                    @update:model-value="
-                        localityParams.region_id = $event;
-                        errors.clear(regionId.name);
-                    "/>
-            </template>
-            <template #locality_id="{ field: localityId, errors }">
-                <form-field :field="localityId"
-                    :params="localityParams"
-                    @update:model-value="
-                        errors.clear(localityId.name)
-                    "/>
-            </template>
-        </enso-form>
-    </modal>
+                <p class="help is-danger"
+                    v-if="errors.has(postcodeField.name)">
+                    {{ errors.get(postcodeField.name) }}
+                </p>
+            </div>
+        </template>
+        <template #region_id="{ field: regionId, errors }">
+            <form-field :field="regionId"
+                @update:model-value="
+                    localityParams.region_id = $event;
+                    errors.clear(regionId.name);
+                "/>
+        </template>
+        <template #locality_id="{ field: localityId, errors }">
+            <form-field :field="localityId"
+                :params="localityParams"
+                @update:model-value="
+                    errors.clear(localityId.name)
+                "/>
+        </template>
+    </enso-form>
 </template>
 
 <script>
 import { FontAwesomeIcon as Fa } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faLocationArrow, faMapPin, faSearchLocation } from '@fortawesome/free-solid-svg-icons';
-import { Modal } from '@enso-ui/modal/bulma';
+
 import { EnsoForm, FormField } from '@enso-ui/forms/bulma';
 
 library.add(faLocationArrow, faMapPin, faSearchLocation);
@@ -85,7 +83,7 @@ export default {
     name: 'AddressForm',
 
     components: {
-        Fa, Modal, EnsoForm, FormField,
+        Fa, EnsoForm, FormField,
     },
 
     inject: ['canAccess', 'errorHandler', 'http', 'i18n', 'route'],

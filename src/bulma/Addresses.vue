@@ -7,7 +7,7 @@
                 :fetch="fetch">
                 <p class="control">
                     <a class="button is-small is-info is-rounded is-bold"
-                        @click="create()">
+                        @click="create">
                         <span>
                             {{ i18n('New Address') }}
                         </span>
@@ -54,12 +54,13 @@
                     @delete="destroy(address, index)"/>
             </div>
         </div>
-        <address-form :path="path"
-            :id="id"
-            :type="type"
-            @close="path = null"
-            @submitted="fetch(); path = null;"
-            v-if="path"/>
+        <modal @close="path = null"
+            v-if="path">
+            <address-form :path="path"
+                :id="id"
+                :type="type"
+                @submitted="fetch(); path = null;"/>
+        </modal>
     </div>
 </template>
 
@@ -67,6 +68,7 @@
 import { faPlus, faSync, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon as Fa } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
+import { Modal } from '@enso-ui/modal/bulma';
 import AddressCard from './AddressCard.vue';
 import AddressForm from './AddressForm.vue';
 
@@ -75,7 +77,7 @@ library.add(faPlus, faSync, faSearch);
 export default {
     name: 'Addresses',
 
-    components: { Fa, AddressCard, AddressForm },
+    components: { Modal, Fa, AddressCard, AddressForm },
 
     inject: ['errorHandler', 'i18n', 'http', 'route'],
 
