@@ -1,9 +1,10 @@
 <template>
     <enso-form class="box has-background-light"
-        v-bind="$attrs"
+        :path="path"
         :params="params"
         :key="key"
         @ready="setFields"
+        v-bind="$attrs"
         disable-state>
         <template #actions-left
             v-if="canLocalize">
@@ -21,7 +22,7 @@
         </template>
         <template #country_id="{ field: countryId }">
             <form-field :field="countryId"
-                @update:model-value="rerender"/>
+                @update:model-value="reRender"/>
         </template>
         <template #postcode="{ field: postcodeField, errors }">
             <div class="is-fullwidth">
@@ -91,8 +92,12 @@ export default {
     inheritAttrs: false,
 
     props: {
-        id: {
+        addressableId: {
             type: [String, Number],
+            required: true,
+        },
+        id: {
+            type: [Number, null],
             required: true,
         },
         type: {
@@ -124,6 +129,11 @@ export default {
         field() {
             return this.form && this.form.field;
         },
+        path() {
+            return this.id
+                ? this.route('core.addresses.edit', this.id)
+                : this.route('core.addresses.create', this.params);
+        },
         postcodeCss() {
             if (this.postcode === null) {
                 return 'is-info';
@@ -148,13 +158,13 @@ export default {
                 }).catch(this.errorHandler)
                 .finally(() => (this.loading = false));
         },
-        rerender(countryId) {
+        reRender(countryId) {
             this.params.countryId = countryId;
             this.key++;
         },
         setFields({ form }) {
             this.form = form;
-            this.field('addressable_id').value = this.id;
+            this.field('addressable_id').value = this.addressableId;
             this.field('addressable_type').value = this.type;
             this.localityParams.region_id = this.field('region_id').value;
             this.$emit('form-loaded', form);

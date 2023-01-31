@@ -26,15 +26,7 @@
                     {{ address.additional }}
                 </p>
                 <p>
-                    <span v-if="address.locality">
-                        {{ address.locality }}
-                    </span>
-                    <span v-if="address.city">
-                        {{ address.city }}
-                    </span>
-                    <span v-if="address.region">
-                        {{ address.region }}
-                    </span>
+                    {{ label }}
                 </p>
                 <p v-if="address.postcode">
                     {{ i18n('Postcode') }}  {{ address.postcode }}
@@ -135,6 +127,13 @@ export default {
         controls: false,
         confirmation: false,
     }),
+
+    computed: {
+        label() {
+            const { locality, city, region } = this.address;
+            return [locality, city, region].filter(v => v).join(', ');
+        }
+    }
 };
 </script>
 

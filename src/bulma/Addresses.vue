@@ -2,12 +2,12 @@
     <div class="addresses-wrapper">
         <div class="field is-grouped">
             <slot name="controls"
-                :create="create"
+                :create="() => (form = true)"
                 :internal-query="internalQuery"
                 :fetch="fetch">
                 <p class="control">
                     <a class="button is-small is-info is-rounded is-bold"
-                        @click="create">
+                        @click="form = true">
                         <span>
                             {{ i18n('New Address') }}
                         </span>
@@ -50,16 +50,16 @@
                     @make-default="make('default', address)"
                     @make-shipping="make('shipping', address)"
                     @make-billing="make('billing', address)"
-                    @edit="edit(address)"
+                    @edit="addressId = address.id; form = true"
                     @delete="destroy(address, index)"/>
             </div>
         </div>
-        <modal @close="path = null"
-            v-if="path">
-            <address-form :path="path"
-                :id="id"
-                :type="type"
-                @submitted="fetch(); path = null;"/>
+        <modal @close="form = null; addressId = null; fetch()"
+            v-if="form">
+            <address-form :id="addressId"
+                @submit="addressId = $event.address.id"
+                :addressable-id="id"
+                :type="type"/>
         </modal>
     </div>
 </template>
@@ -99,9 +99,10 @@ export default {
     emits: ['update'],
 
     data: () => ({
+        addressId: null,
+        form: false,
         loading: false,
         addresses: [],
-        path: null,
         internalQuery: '',
     }),
 
@@ -148,12 +149,6 @@ export default {
                     this.$emit('update');
                     this.loading = false;
                 }).catch(this.errorHandler);
-        },
-        edit(address) {
-            this.path = this.route('core.addresses.edit', address.id);
-        },
-        create() {
-            this.path = this.route('core.addresses.create', this.params);
         },
         make(type, address) {
             this.loading = true;
