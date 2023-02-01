@@ -57,7 +57,7 @@
         <modal @close="form = null; addressId = null; fetch()"
             v-if="form">
             <address-form :id="addressId"
-                @submit="addressId = $event.address.id"
+                @submit="submit"
                 :addressable-id="id"
                 :type="type"/>
         </modal>
@@ -167,6 +167,11 @@ export default {
                     this.$emit('update');
                     this.loading = false;
                 }).catch(this.errorHandler);
+        },
+        submit({ address }) {
+            if (address) {
+                this.addressId = address.id;
+            }
         },
     },
 };
