@@ -98,7 +98,7 @@ export default {
         },
         id: {
             type: [Number, null],
-            required: true,
+            default: null,
         },
         type: {
             type: String,
