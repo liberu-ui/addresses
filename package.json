@@ -1,5 +1,5 @@
 {
-  "name": "@cgdsoftware/addresses",
+  "name": "@liberu-ui/addresses",
   "version": "3.0.0",
   "description": "Addresses",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/@cgdsoftware/addresses.git"
+    "url": "git+https://github.com/@liberu-ui/addresses.git"
   },
   "keywords": [
     "addresses",
@@ -18,15 +18,15 @@
   "author": "Adrian Ocneanu <aocneanu@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/@cgdsoftware/addresses/issues"
+    "url": "https://github.com/@liberu-ui/addresses/issues"
   },
-  "homepage": "https://github.com/@cgdsoftware/addresses#readme",
+  "homepage": "https://github.com/@liberu-ui/addresses#readme",
   "dependencies": {
-    "@cgdsoftware/card": "^3.0",
-    "@cgdsoftware/confirmation": "^2.0",
-    "@cgdsoftware/forms": "^3.0",
-    "@cgdsoftware/google": "^3.0",
-    "@cgdsoftware/modal": "^3.0",
+    "@liberu-ui/card": "^3.0",
+    "@liberu-ui/confirmation": "^2.0",
+    "@liberu-ui/forms": "^3.0",
+    "@liberu-ui/google": "^3.0",
+    "@liberu-ui/modal": "^3.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.2",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/vue-fontawesome": "3.0.0-5",
