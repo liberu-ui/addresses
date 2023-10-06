@@ -1,6 +1,6 @@
 {
   "name": "@liberu-ui/addresses",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Addresses",
   "main": "index.js",
   "scripts": {
