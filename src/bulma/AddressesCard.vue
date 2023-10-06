@@ -28,7 +28,7 @@
 import { mapState } from 'vuex';
 import {
     Card, CardHeader, CardRefresh, CardCollapse, CardBadge, CardContent,
-} from '@enso-ui/card/bulma';
+} from '@liberu-ui/card/bulma';
 import { FontAwesomeIcon as Fa } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faMapSigns, faPlusSquare } from '@fortawesome/free-solid-svg-icons';

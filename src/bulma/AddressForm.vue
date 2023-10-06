@@ -76,8 +76,8 @@
 import { FontAwesomeIcon as Fa } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faLocationArrow, faMapPin, faSearchLocation } from '@fortawesome/free-solid-svg-icons';
-import { Modal } from '@enso-ui/modal/bulma';
-import { EnsoForm, FormField } from '@enso-ui/forms/bulma';
+import { Modal } from '@liberu-ui/modal/bulma';
+import { EnsoForm, FormField } from '@liberu-ui/forms/bulma';
 
 library.add(faLocationArrow, faMapPin, faSearchLocation);
 

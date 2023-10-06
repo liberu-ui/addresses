@@ -106,7 +106,7 @@ import {
     faPencilAlt, faAnchor, faGlobe, faStickyNote, faTrashAlt,
     faTruck, faMoneyBillWave,
 } from '@fortawesome/free-solid-svg-icons';
-import Confirmation from '@enso-ui/confirmation/bulma';
+import Confirmation from '@liberu-ui/confirmation/bulma';
 
 library.add(
     faPencilAlt, faAnchor, faGlobe, faStickyNote,
