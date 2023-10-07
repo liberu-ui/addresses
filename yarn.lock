@@ -1016,7 +1016,7 @@
     "@fortawesome/free-solid-svg-icons" "^5.2.0"
     "@fortawesome/vue-fontawesome" "3.0.0-5"
     bulma "^0.9.0"
-    chart.ts "^3.0.0"
+    chart.js "^3.0.0"
     chartjs-plugin-annotation "^1.0.2"
     chartjs-plugin-datalabels "^2.0.0"
     file-saver "^2.0"
@@ -1096,7 +1096,7 @@
   resolved "https://registry.yarnpkg.com/@liberu-ui/directives/-/directives-2.0.8.tgz#93862efb42e8898300c0ed0bf4bb9abea1a9b0bc"
   integrity sha512-emlMWnj4iEVcHlxpZ6GHBZP4Vuwwn0prCs99f70j3H0sFI4i1Iby5Tyu9L+Jo75HaQoZpVUHHAJVCxE1SzhKtg==
   dependencies:
-    highlight.ts "^11.0"
+    highlight.js "^11.0"
     vue "^3.0"
 
 "@liberu-ui/divider@^2.0":
@@ -2659,9 +2659,9 @@ chardet@^0.7.0:
   resolved "https://registry.yarnpkg.com/chardet/-/chardet-0.7.0.tgz#90094849f0937f2eedc2425d0d28a9e5f0cbad9e"
   integrity sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==
 
-chart.ts@^3.0.0:
+chart.js@^3.0.0:
   version "3.7.0"
-  resolved "https://registry.yarnpkg.com/chart.ts/-/chart.ts-3.7.0.tgz#7a19c93035341df801d613993c2170a1fcf1d882"
+  resolved "https://registry.yarnpkg.com/chart.js/-/chart.js-3.7.0.tgz#7a19c93035341df801d613993c2170a1fcf1d882"
   integrity sha512-31gVuqqKp3lDIFmzpKIrBeum4OpZsQjSIAqlOpgjosHDJZlULtvwLEZKtEhIAZc7JMPaHlYMys40Qy9Mf+1AAg==
 
 chartjs-plugin-annotation@^1.0.2:
@@ -3551,9 +3551,9 @@ has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
-highlight.ts@^11.0:
+highlight.js@^11.0:
   version "11.4.0"
-  resolved "https://registry.yarnpkg.com/highlight.ts/-/highlight.ts-11.4.0.tgz#34ceadd49e1596ee5aba3d99346cdfd4845ee05a"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-11.4.0.tgz#34ceadd49e1596ee5aba3d99346cdfd4845ee05a"
   integrity sha512-nawlpCBCSASs7EdvZOYOYVkJpGmAOKMYZgZtUqSRqodZE0GRVcFKwo1RcpeOemqh9hyttTdd5wDBwHkuSyUfnA==
 
 hosted-git-info@^2.1.4:
