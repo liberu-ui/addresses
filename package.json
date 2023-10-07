@@ -2,7 +2,7 @@
   "name": "@liberu-ui/addresses",
   "version": "3.0.4",
   "description": "Addresses",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
